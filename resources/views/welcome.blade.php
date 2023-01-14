@@ -68,19 +68,13 @@
                     </section>
 
                     <!--Graphs -->
-                    <section>
+                    <section id="app" class="graph">
                         <div class="card">
-                            <div id="app">
-                                <template>
-                                    <div>
-                                      <line-chart :chart-data="chartData"></line-chart>
-                                    </div>
-                                  </template>                            
-                            </div>
+                            <chart-grid/>
                         </div>
                     </section>
                 </div>
             </div>
-            <script src="{{ mix('js/main.js') }}"></script>
+            <script src="{{ mix('js/app.js') }}" defer></script>
     </body>
 </html>
