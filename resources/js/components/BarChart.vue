@@ -35,12 +35,12 @@ export default {
     return {
       chartData: {
         labels: [  
-          'Eating',
-          'Drinking',
-          'Sleeping',
-          'Designing',
-          'Coding',
-          'Cycling',
+          'Strength',
+          'Willpower',
+          'Agility',
+          'Endurance',
+          'Personality',
+          'Luck',
           'Running' 
         ],
         datasets: [
@@ -52,7 +52,7 @@ export default {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(179,181,198,1)',
-      data: [65, 59, 90, 81, 56, 55, 40]
+      data: [10, 10, 10, 10, 10, 10, 10]
     },
     {
       label: 'My Second dataset',
@@ -62,7 +62,7 @@ export default {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(255,99,132,1)',
-      data: [28, 48, 40, 19, 96, 27, 100]
+      data: [1, 2, 4, 5, 6, 7, 9]
     }
 
   ]

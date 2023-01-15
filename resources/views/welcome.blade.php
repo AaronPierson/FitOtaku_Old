@@ -10,12 +10,14 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
-    <body class="antialiased">
+    <body class="antialiased" id="app">
             <div class="dashboard">
                 <div class="header">
                     <h1>Welcome, Lara</h1>
                 </div>
                 <div class="content">
+                    <button @click="showModal = !showModal" class="circle-button">Open modal</button>
+
                     <!--Stats -->
                     <section>
                         <div class="card">
@@ -68,12 +70,18 @@
                     </section>
 
                     <!--Graphs -->
-                    <section id="app" class="graph">
+                    <section  class="graph">
                         <div class="card">
                             <chart-grid/>
                         </div>
+
+                            <modal-box :show-modal="showModal"></modal-box>
+
                     </section>
+
+
                 </div>
+
             </div>
             <script src="{{ mix('js/app.js') }}" defer></script>
     </body>
