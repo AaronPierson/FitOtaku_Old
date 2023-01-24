@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
         <link rel="stylesheet" href="css/dashboard.css"
         <!-- Fonts -->
@@ -17,7 +16,6 @@
                 </div>
                 <div class="content">
                     <button @click="showModal = !showModal" class="circle-button">Open modal</button>
-
                     <!--Stats -->
                     <section>
                         <div class="card">
@@ -74,15 +72,12 @@
                         <div class="card">
                             <chart-grid/>
                         </div>
-
-                            <modal-box :show-modal="showModal"></modal-box>
-
+                        <modal-box :show-modal="showModal" :info="'Add Weight'"></modal-box>
+                        <modal-box :show-modal="showModal" :info="'Add Workout'"></modal-box>
+                        <modal-box :show-modal="showModal" :info="'Add Food'"></modal-box>
                     </section>
-
-
                 </div>
-
             </div>
-            <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/app.js') }}" defer></script>
     </body>
 </html>

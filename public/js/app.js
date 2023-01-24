@@ -19802,6 +19802,10 @@ __webpack_require__.r(__webpack_exports__);
     showModal: {
       type: Boolean,
       "default": false
+    },
+    info: {
+      type: String,
+      required: true
     }
   },
   methods: {
@@ -19867,9 +19871,6 @@ var _hoisted_3 = {
   "class": "form-group"
 };
 var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Weight", -1 /* HOISTED */);
-});
-var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "submit",
     "class": "btn btn-primary"
@@ -19887,17 +19888,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitWeight && $options.submitWeight.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <label>Enter your weight in pounds: </label> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.info), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <label>Enter your weight in pounds: </label> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     "class": "form-control",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.weight = $event;
-    }),
-    placeholder: "weight"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.weight]])]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.weight]])]), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $props.showModal = !$props.showModal;
-    })
+    }),
+    "class": "cancel"
   }, "Close")], 32 /* HYDRATE_EVENTS */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
@@ -20001,7 +20002,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-container[data-v-75bd336e] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 1000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 2;\n}\n.modal-overlay[data-v-75bd336e] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    z-index: 1;\n}\n.modal-box[data-v-75bd336e] {\r\n    /* modal box styles goes here */\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    background-color: #9a9a8e;\r\n    z-index:3;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    width: 50%;\r\n    height: 50%;\r\n    color: #45230d;\n}\n.form-container[data-v-75bd336e] {\r\n    text-align: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\n}\nh2[data-v-75bd336e]{\r\n    margin: 10%;\n}\ninput[data-v-75bd336e]{\r\n    width: 50%;\n}\nbutton[data-v-75bd336e]{\r\n    margin: 5%;\r\n    padding: 10px;\r\n    background-color: #276468;\r\n    width: 50%;\r\n    color: white;\r\n    align-items: center;\r\n    justify-content: center;\r\n    display: flex;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-container[data-v-75bd336e] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 1000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 2;\n}\n.modal-overlay[data-v-75bd336e] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    z-index: 1;\n}\n.modal-box[data-v-75bd336e] {\r\n    /* modal box styles goes here */\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    background-color: #9a9a8e;\r\n    z-index:3;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    width: 35%;\r\n    height: 40%;\r\n    color: #45230d;\n}\n.form-container[data-v-75bd336e] {\r\n    text-align: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\n}\nh2[data-v-75bd336e]{\r\n    margin: 10%;\n}\ninput[data-v-75bd336e]{\r\n  padding: 0.5rem; /* adds padding */\r\n  margin-bottom: 1rem; /* adds margin at the bottom */\r\n  border-radius: 0.25rem; /* adds rounded corners */\r\n  border: none; /* removes the border */\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* adds a subtle drop shadow */\n}\nbutton[data-v-75bd336e]{\r\n    margin: 5% 0% 5% 0%;\r\n    padding: 10px;\r\n    background-color: #276468;\r\n    width: 70%;\r\n    color: white;\r\n    align-items: center;\r\n    justify-content: center;\r\n    display: flex;\r\n    border-radius: 10px;\r\n    border: none; /* removes the border */\r\n    cursor: pointer; /* changes the cursor to a pointer on hover */\n}\n.cancel[data-v-75bd336e]{\r\n  background-color: #6c757d; /* sets the background color */\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
