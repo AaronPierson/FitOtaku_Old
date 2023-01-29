@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('players', function (Blueprint $table) {
+        Schema::create('weights', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('Name');
-            $table->string('password');
-            $table->string('email')->unique();
+            $table->integer('weight');
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('weight');
     }
 };
