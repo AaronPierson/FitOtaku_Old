@@ -15,8 +15,8 @@
 
 <style scoped>
     footer {
-        background-color: #333;
-        color: #fff;
+        /* background-color: #00495C; */
+        color: #DAA520;
         padding: 10px;
         text-align: center;
     }

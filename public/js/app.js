@@ -17797,12 +17797,14 @@ var _withScopeId = function _withScopeId(n) {
 var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
     "class": "hero"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Join the Adventure!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Discover new ways to get fit and healthy with our unique workout program."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Fitness Quest"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Join the Adventure!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Discover new ways to get fit and healthy with our unique workout program."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "#",
     "class": "btn"
-  }, "Learn More")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
-    "class": "features"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, " Learn More ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
+    "class": "fe-group"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Features"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "features"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "feature"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "fas fa-dumbbell"
@@ -17814,14 +17816,14 @@ var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
     "class": "feature"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "fas fa-map-marked-alt"
-  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Adventure Mode"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Embark on a journey through a virtual world, completing challenges along the way.")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
+  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Adventure Mode"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Embark on a journey through a virtual world, completing challenges along the way.")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
     id: "leaderboard"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Leaderboard"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "See where you stand among the top fitness gamers!")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
     "class": "cta"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ready to Start Your Quest?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Sign up now and join the adventure!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "#",
     "class": "btn"
-  }, "Sign Up")])], -1 /* HOISTED */);
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, " Sign Up ")])])], -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -17915,25 +17917,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Fitness Quest", -1 /* HOISTED */);
-
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "logo"
+}, "Logo", -1 /* HOISTED */);
+var _hoisted_2 = {
+  "class": "log-in-out"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home")];
     }),
     _: 1 /* STABLE */
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: "#"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Exercises")];
-    }),
-    _: 1 /* STABLE */
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li><Link href=\"#\">Exercises</Link></li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "#leaderboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -17954,7 +17953,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Contact")];
     }),
     _: 1 /* STABLE */
-  })])])]), _hoisted_1]);
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [!_ctx.isLoggedIn ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 0,
+    onClick: _cache[0] || (_cache[0] = function () {
+      return _ctx.login && _ctx.login.apply(_ctx, arguments);
+    })
+  }, "Log In")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 1,
+    onClick: _cache[1] || (_cache[1] = function () {
+      return _ctx.logout && _ctx.logout.apply(_ctx, arguments);
+    })
+  }, "Log Out"))])]);
 }
 
 /***/ }),
@@ -20058,7 +20067,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    background-color: #fff;\r\n    color: #333;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%;\n}\n.features[data-v-6a63e488]{\r\n  /* background-color: #160801; */\n}\nbutton[data-v-6a63e488]{\r\n    background-color: #DAA520;\r\n    border-radius: 5%;\r\n    /* border: none; */\r\n    width: 100px;\r\n    height: 50px;\n}\nh1[data-v-6a63e488] {\r\n    font-size: 36px;\r\n    margin: 0;\n}\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\n#leaderboard[data-v-6a63e488]{\r\n  margin: 10%;\r\n  padding: 10%;\n}\n.cta[data-v-6a63e488]{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20082,7 +20091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nfooter[data-v-a77bcb12] {\r\n        background-color: #333;\r\n        color: #fff;\r\n        padding: 10px;\r\n        text-align: center;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nfooter[data-v-a77bcb12] {\r\n        /* background-color: #00495C; */\r\n        color: #DAA520;\r\n        padding: 10px;\r\n        text-align: center;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20106,7 +20115,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nheader {\r\n    background-color: #333;\r\n    color: #fff;\r\n    padding: 20px;\r\n    text-align: center;\n}\nheader h1 {\r\n    font-size: 36px;\r\n    margin: 0;\n}\nnav {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin: 20px 0;\n}\nnav ul {\r\n    list-style: none;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\n}\nnav li {\r\n    margin: 0 10px;\n}\nnav a {\r\n    color: #fff;\r\n    text-decoration: none;\r\n    font-size: 18px;\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nheader {\r\n    /* background-color: #00495C; */\r\n    color: #fff;\r\n    padding: 20px;\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding: 1rem;\n}\nnav {\r\n    display: flex;\r\n    /* justify-content: flex-start; */\r\n    justify-content: center;\r\n    margin: 20px 0;\n}\nnav ul {\r\n    list-style: none;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\n}\nnav li {\r\n    /* margin: 0 10px; */\r\n    margin-right: 1rem;\n}\nnav a {\r\n    color: #DAA520;\r\n    text-decoration: none;\r\n    font-size: 18px;\n}\nbutton{\r\n    background-color: #DAA520;\r\n    border-radius: 5%;\r\n    /* border: none; */\r\n    width: 100px;\r\n    height: 50px;\n}\n.log-in-out-container {\r\n  display: flex;\r\n  justify-content: flex-end;\n}\n.logo {\r\n  margin-right: auto;\n}\n.log-in-out {\r\n  /* margin-left: auto; */\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

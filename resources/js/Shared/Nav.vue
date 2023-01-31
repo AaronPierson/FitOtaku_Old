@@ -1,15 +1,19 @@
 <template>
-   <header>
-    <nav>
-      <ul>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="#">Exercises</Link></li>
-        <li><Link href="#leaderboard">Leaderboard</Link></li>
-        <li><Link href="/About">About</Link></li>
-        <li><Link href="#">Contact</Link></li>
-      </ul>
-    </nav>
-    <h1>Fitness Quest</h1>
+<header>
+  <div class="logo">Logo</div>
+  <nav>
+    <ul>
+      <li><Link href="/">Home</Link></li>
+      <!-- <li><Link href="#">Exercises</Link></li> -->
+      <li><Link href="#leaderboard">Leaderboard</Link></li>
+      <li><Link href="/About">About</Link></li>
+      <li><Link href="#">Contact</Link></li>
+    </ul>
+  </nav>
+  <div class="log-in-out">
+    <button @click="login" v-if="!isLoggedIn">Log In</button>
+    <button @click="logout" v-else>Log Out</button>
+  </div>
 </header>
 
 </template>
@@ -21,23 +25,22 @@
         },
     };
 </script>
-
 <style scope>
 
 header {
-    background-color: #333;
+    /* background-color: #00495C; */
     color: #fff;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
-    font-size: 36px;
-    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 nav {
     display: flex;
+    /* justify-content: flex-start; */
     justify-content: center;
     margin: 20px 0;
 }
@@ -50,14 +53,36 @@ nav ul {
 }
 
 nav li {
-    margin: 0 10px;
+    /* margin: 0 10px; */
+    margin-right: 1rem;
+
 }
 
 nav a {
-    color: #fff;
+    color: #DAA520;
     text-decoration: none;
     font-size: 18px;
 }
 
+button{
+    background-color: #DAA520;
+    border-radius: 5%;
+    /* border: none; */
+    width: 100px;
+    height: 50px;
+}
+
+.log-in-out-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.log-in-out {
+  /* margin-left: auto; */
+}
 
 </style>
