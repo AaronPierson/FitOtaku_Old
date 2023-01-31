@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,12 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', function() {
-    return view('welcome');
+    return Inertia::render('Home');
+});
+
+Route::get('/About', function() {
+    sleep(2);
+    return Inertia::render('About');
 });
 
 Route::get('players', [UsersController::class, 'index']);
