@@ -1,5 +1,6 @@
 <template>
-    <body class="antialiased" id="app">
+    <Layout>
+        <main>
             <div class="dashboard">
                 <div class="header">
                     <!-- @if($Player != null)
@@ -31,9 +32,11 @@
                         <div class="card">
                             <h2>Quests</h2>
                             <ul>
-                                <!-- {{-- @foreach($user->quests as $quest)
-                                    <li>{{ $quest->name }} - {{ $quest->status }}</li>
-                                @endforeach --}} -->
+                                <li 
+                                v-for="user in users"
+                                    :key="user.id"
+                                    v-text="user.name"
+                                />
                             </ul>
                         </div>
                     </section>
@@ -63,33 +66,102 @@
                     </section>
 
                     <!--Graphs -->
-                    <!-- <section  class="graph">
+                    <section  class="graph">
                         <div class="card">
-                            <chart-grid/>
+                            <Chart/>
                         </div>
-                        <modal-box :show-modal="showModal" :info="'Add Weight'"></modal-box>
+                        <!-- <modal-box :show-modal="showModal" :info="'Add Weight'"></modal-box>
                         <modal-box :show-modal="showModal" :info="'Add Workout'"></modal-box>
-                        <modal-box :show-modal="showModal" :info="'Add Food'"></modal-box>
-                    </section> -->
-                    <!-- {{-- <section>
-                        @foreach( $player as $p)
-                        <br/>
-                        <div>
-                            <p>{{ $p->name }}</p>
-
-                        </div>
-                        @endforeach
-
-                    </section> --}} -->
+                        <modal-box :show-modal="showModal" :info="'Add Food'"></modal-box> -->
+                    </section>
                 </div>
             </div>
-    </body>
+        </main>  
+    </Layout>  
 </template>
 
 <script>
+import Layout from '../Shared/Layout'
+import Chart from '../components/RadarChart'
+
     export default {
         props: {
             Player: String,
+            users: Array,
+        },
+        components: {
+            Layout,
         }
     };
 </script>
+
+<style scoped>
+.dashboard {
+    max-width: 800px;
+    margin: 6% auto;
+    /* background-color: #34495e; */
+    background-color: #2a1d0d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    /* background-color: #fff; */
+    background-color: #9a9a8e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+    color: #45230d;
+}
+
+.card h2 {
+    margin: 0;
+}
+
+section {
+    width: 100%;
+    display: flex; /* This will align the cards horizontally and with space between them */
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    padding: 0%;
+}
+
+.graph{
+    width: 50%;
+}
+
+.circle-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px; /* make the button circular */
+    background-color: #276468;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+</style>
