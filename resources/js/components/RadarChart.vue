@@ -29,7 +29,7 @@ ChartJS.register(
 )
 
 export default {
-  name: 'BarChart',
+  name: 'Radar',
   components: { Radar },
   data() {
     return {
