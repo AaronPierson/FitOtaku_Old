@@ -10,10 +10,12 @@ use Inertia\Inertia;
 
 class UsersController extends Controller
 {
-
-
-    public function index(){   
-        return Inertia::render('Dashboard', ['Player' => "Aaron"]);
+    public function index() {   
+        return Inertia::render('Dashboard', [
+            'users' => User::all()->map(fn($user) => [
+                'name' => $user->name,
+            ])
+        ]);
     }
 
     public function show($id)
