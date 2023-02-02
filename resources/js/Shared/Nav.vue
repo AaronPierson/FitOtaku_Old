@@ -10,9 +10,9 @@
       <li><Link href="#">Contact</Link></li>
     </ul>
   </nav>
-  <div class="log-in-out">
-    <button @click="login" v-if="!isLoggedIn">Log In</button>
-    <button @click="logout" v-else>Log Out</button>
+  <div class="log-in-out" >
+      <Link href="/logout" method="post" as="button">Log In</Link>
+    <!-- <button @click="logout" v-else>Log Out</button> -->
   </div>
 </header>
 
@@ -64,12 +64,15 @@ nav a {
     font-size: 18px;
 }
 
+
+
 button{
     background-color: #DAA520;
     border-radius: 5%;
     /* border: none; */
     width: 100px;
     height: 50px;
+    cursor:pointer
 }
 
 .log-in-out-container {
