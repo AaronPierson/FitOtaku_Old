@@ -19,47 +19,40 @@ use App\Models\User;
 |
 */
 
-Route::middleware('auth')->group(function(){
-    Route::post('/logout', function(){
-        // return Inertia::render('About');
-        dd('loging the user out');
-    });
-    
-    Route::get('players', [UsersController::class, 'index']);
-    Route::get('players/{id}', [UsersController::class, 'show']);
-});
 
+// home page
 Route::get('/', function() {
     return Inertia::render('Home');
 });
-
-Route::get('/users/create', function(){
-    return Inertia::render('Users/Create');
-
-});
-
-
-Route::post('/users', function(Request $request){
-    //validate the info
-    $validated = $request->validate([
-        'name' => 'required',
-        'email' => ['required', 'email'],
-        'password' => 'required',
-
-    ]);
-    //create the user
-    User::create($validated);
-    //redirect
-    return redirect('/');
-});
-
+// about page
 Route::get('/About', function() {
-    sleep(2);
     return Inertia::render('About');
 });
 
+// contact page
+Route::get('/Contact', function() {
+    return Inertia::render('Contact');
+});
+
+// only authenticated users can access this route
+Route::middleware('auth')->group(function(){
+    Route::post('/logout', function(){
+        dd('loging the user out');
+    });
+    // Shows a list of all users
+    Route::get('users', [UsersController::class, 'index']);
+    // Shows a single user profile
+    Route::get('users/{id}', [UsersController::class, 'show']);
+});
+
+//signup page
+Route::get('/users/create', [UsersController::class, 'create']);
+// create a new user
+Route::post('/users', [UsersController::class, 'store']);
+
+
+// login page
 Route::get('login', [LoginController::class, 'create'])->name('login');
-
-
-
+// login a user
+Route::post('login', [LoginController::class, 'store']);
 
