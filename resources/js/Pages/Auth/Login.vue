@@ -1,3 +1,98 @@
 <template>
-    <h1>Login</h1>
+    <header class="container">
+    <nav>
+        <ul>
+            <li><div class="logo">Logo</div></li>
+        </ul>
+        <ul>
+            <li><Link href="/">Home</Link></li>
+            <li>  
+                <div class="log-in-out" >
+                <a href="/logout" method="post" as="button">Log In</a>
+                <!-- <button @click="logout" v-else>Log Out</button> -->
+            </div>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <main class="container">
+      <article class="grid">
+        <div>
+          <hgroup>
+            <h1>Sign in</h1>
+            <h2>A minimalist layout for Login pages</h2>
+          </hgroup>
+          <form data-bitwarden-watching="1">
+            <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required="">
+            <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="">
+            <fieldset>
+              <label for="remember">
+                <input type="checkbox" role="switch" id="remember" name="remember">
+                Remember me
+              </label>
+            </fieldset>
+            <button type="submit" class="contrast" onclick="event.preventDefault()">Login</button>
+          </form>
+        </div>
+        <div></div>
+      </article>
+    </main>
+
+        <footer class="container">
+                <p>&copy; Fitness Quest 2023</p>
+        </footer>
 </template>
+
+<script>
+import Layout from '../../Shared/Layout';
+import { Link } from '@inertiajs/vue3';
+export default {
+  components: {
+    Layout,
+    Link,
+  },
+}
+</script>
+
+<script setup>
+import {reactive} from "vue";
+import { router } from '@inertiajs/vue3';
+
+
+let form = reactive({
+    email: '',
+    password: ''
+});
+
+let submit = () => {
+    router.post('/login', form);
+};
+</script>
+
+<style scoped>
+    main {
+        margin: 10% auto;
+        padding: 20px;
+        text-align: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    /* input {
+        margin-bottom: 10px;
+    } */
+    footer{
+        /* position: fixed; */
+        /* bottom: 0; */
+        /* line-height: 60px; */
+        /* border-top: 1px solid #e5e5e5; */
+        width: 100%;
+        text-align: center;
+    }
+</style>

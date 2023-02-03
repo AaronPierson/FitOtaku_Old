@@ -1,17 +1,17 @@
 <template>
-<header>
+<header class="container">
   <div class="logo">Logo</div>
   <nav>
     <ul>
       <li><Link href="/">Home</Link></li>
       <!-- <li><Link href="#">Exercises</Link></li> -->
-      <li><Link href="#leaderboard">Leaderboard</Link></li>
+      <!-- <li><Link href="#leaderboard">Leaderboard</Link></li> -->
       <li><Link href="/About">About</Link></li>
-      <li><Link href="#">Contact</Link></li>
+      <li><Link href="/Contact">Contact</Link></li>
     </ul>
   </nav>
   <div class="log-in-out" >
-      <Link href="/logout" method="post" as="button">Log In</Link>
+      <Link href="/logout" method="post" role="button">Log In</Link>
     <!-- <button @click="logout" v-else>Log Out</button> -->
   </div>
 </header>
@@ -59,21 +59,21 @@ nav li {
 }
 
 nav a {
-    color: #DAA520;
-    text-decoration: none;
-    font-size: 18px;
+    /* color: #DAA520; */
+    /* text-decoration: none;
+    font-size: 18px; */
 }
 
 
 
-button{
+/* button{
     background-color: #DAA520;
     border-radius: 5%;
-    /* border: none; */
+    border: none;
     width: 100px;
     height: 50px;
     cursor:pointer
-}
+} */
 
 .log-in-out-container {
   display: flex;

@@ -19,7 +19,7 @@
 
 <style scoped>
 h1, label{
-    color: white;
+    color: red;
 }
 </style>
 
