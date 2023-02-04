@@ -1,7 +1,8 @@
 <template>
     <Layout>
         <main class="container">
-            <hgroup>
+            <article>
+                <hgroup>
             <h1>
                 About Us
             </h1>
@@ -51,6 +52,8 @@
                     All exercises can be done at home or on the go, so you don't need any special equipment to get started.
                 </p>
             </hgroup>
+            </article>
+
         </main>
     </Layout>
 </template>
@@ -64,3 +67,26 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+hgroup {
+    margin-bottom: 2rem;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+</style>

@@ -9,11 +9,15 @@
       <li><Link href="/About">About</Link></li>
       <li><Link href="/Contact">Contact</Link></li>
     </ul>
+    <ul>
+        <li>
+          <Link href="/login"  role="button">Log In</Link>
+        </li>
+        <li>
+          <Link href="/users/create" class="secondary" role="button">Sign Up</Link>
+        </li>
+    </ul>
   </nav>
-  <div class="log-in-out" >
-      <Link href="/login"  role="button">Log In</Link>
-      <Link href="/logout" method="post"  role="button">Logout</Link>
-  </div>
 </header>
 
 </template>
@@ -54,7 +58,7 @@ nav ul {
 
 nav li {
     /* margin: 0 10px; */
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 
 }
 
