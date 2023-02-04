@@ -14,29 +14,28 @@
 
       <section class="fe-group">
         <h2>Features</h2>
-
-        <article class="features">
-            <div class="feature">
+        <div class="features">
+            <article class="feature">
               <hgroup>
                 <h3>Custom Workouts</h3>
                 <p>Choose from a variety of exercises to create your own workout program.</p>
               </hgroup>
-          </div>
+          </article>
 
-          <div class="feature">
+          <article class="feature">
             <hgroup>
               <h3>Goal Tracking</h3>
               <p>Track your progress and unlock rewards as you reach your fitness goals.</p>
             </hgroup>
-          </div>
+          </article>
 
-          <div class="feature">
+          <article class="feature">
             <hgroup>
               <h3>Leaderboard</h3>
               <p>See where you stand among the top fitness gamers!</p>
             </hgroup>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
 
       <!-- <section id="leaderboard">
@@ -70,7 +69,6 @@ export default {
 
 <style scoped>
 
-
 section {
     color: #DAA520;
     padding: 20px;
@@ -99,7 +97,10 @@ button{
     /* background-color: #DAA520;
     border-radius: 5%;
     border: none; */
-    /* width: 50%; */
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+    width: 50%;
     /* height: 50px; */
 }
 
@@ -138,10 +139,10 @@ button{
     justify-content: center;
 }
 
-#leaderboard{
+/* #leaderboard{
   margin: 10%;
   padding: 10%;
-}
+} */
 
 /* .cta{
   background-color: #F7EDE5;

@@ -34,6 +34,17 @@ Route::get('/Contact', function() {
     return Inertia::render('Contact');
 });
 
+// submit contact form
+Route::post('/Contact', function(Request $request) {
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => ['required', 'email'],
+        'message' => 'required',
+    ]);
+     dd($validated);
+    return redirect('/')->with('success', 'Your message has been sent');
+});
+
 //signup page
 Route::get('/users/create', [UsersController::class, 'create']);
 // create a new user

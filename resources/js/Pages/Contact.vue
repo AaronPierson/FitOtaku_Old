@@ -49,6 +49,6 @@ let form = reactive({
 });
 
 let submit = () => {
-    router.post('/contact', form);
+    router.post('/Contact', form);
 };  
 </script>
