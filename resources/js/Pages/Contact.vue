@@ -6,8 +6,7 @@
                 Contact Us
             </h1>
             </section>
-            <section class="features">
-                <div class="feature">
+            <article>
                     <h2>Send us a message</h2>
                     <form @submit.prevent="submit">
                         <div>
@@ -22,8 +21,7 @@
                             </button>
                         </div>
                     </form>
-                </div>
-            </section>
+            </article>
         </main>
     </Layout>
 </template>
