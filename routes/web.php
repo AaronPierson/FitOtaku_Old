@@ -34,25 +34,26 @@ Route::get('/Contact', function() {
     return Inertia::render('Contact');
 });
 
-// only authenticated users can access this route
-Route::middleware('auth')->group(function(){
-    Route::post('/logout', function(){
-        dd('loging the user out');
-    });
-    // Shows a list of all users
-    Route::get('users', [UsersController::class, 'index']);
-    // Shows a single user profile
-    Route::get('users/{id}', [UsersController::class, 'show']);
-});
-
 //signup page
 Route::get('/users/create', [UsersController::class, 'create']);
 // create a new user
 Route::post('/users', [UsersController::class, 'store']);
+
+// only authenticated users can access this route
+Route::middleware('auth')->group(function(){
+    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+    // Shows a list of all users
+    Route::get('users', [UsersController::class, 'index']);
+    // Shows a single user profile
+    Route::get('users/show', [UsersController::class, 'show']);
+});
 
 
 // login page
 Route::get('login', [LoginController::class, 'create'])->name('login');
 // login a user
 Route::post('login', [LoginController::class, 'store']);
+// logout a user
+Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
+
 
