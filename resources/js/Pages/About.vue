@@ -1,38 +1,57 @@
 <template>
     <Layout>
         <main class="container">
+            <hgroup>
             <h1>
                 About Us
             </h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                aliquam, nulla vel accumsan sodales, nisi quam tincidunt massa, et
-                condimentum nisi mauris at felis. Sed eget semper arcu. In hac
-                habitasse platea dictumst. Nullam consectetur, mi vel rutrum
-                facilisis, nunc augue vulputate justo, nec consequat nisl lectus
-                vel massa. Integer nec felis eget neque convallis luctus. Donec
-                vitae nisl et metus convallis blandit. Praesent euismod, nunc
-                non luctus feugiat, nulla turpis ultrices erat, sit amet
-                eleifend nunc eros sit amet tellus. Suspendisse potenti. Sed
-                tincidunt, arcu ut egestas tempor, diam dui condimentum nibh, vel
-                iaculis odio quam vitae ligula. Curabitur consectetur sapien
-                eget neque ornare, id mollis mauris interdum. Maecenas ac
-                eleifend nisl. Interdum et malesuada fames ac ante ipsum primis
-                in faucibus. Donec non tortor non eros suscipit aliquet. Etiam
-                semper, sapien vitae cursus laoreet, lacus odio pharetra sem, at
-                gravida purus massa vel massa. Aliquam erat volutpat. Fusce
-                auctor ligula eu massa porta, nec ultrices odio volutpat.
-                Aenean auctor, ligula eget ultricies congue, dui lectus
-                ullamcorper tortor, at tincidunt diam lorem vitae augue.
-                Nulla facilisi. Nullam et felis id nisi venenatis sagittis.
-                Curabitur varius, odio eget aliquam consequat, est purus
-                aliquam nisl, nec luctus leo orci eget lacus. Donec sit amet
-                nunc quis nisl elementum fringilla. In hac habitasse platea
-                dictumst. Suspendisse potenti. Nulla facilisi. Donec
-                ultrices, ante eget pharetra ornare, sapien arcu rhoncus
+                Welcome to the ultimate fitness experience for gamers! Our app is designed specifically with gamers in mind, bringing together the worlds of fitness and gaming to help you reach your fitness goals. 
+                We believe that fitness should be fun, and our app combines challenging workouts with gamified progress tracking to make fitness enjoyable and addictive. 
+                Whether you're looking to build muscle, lose weight, or just improve your overall health, our app is the perfect companion for your fitness journey.
             </p>
-        </main>
+            </hgroup>
 
+            <hgroup>
+                <h2>Purpose of Site:</h2>
+                <p>
+                    Our app was created with the goal of making fitness accessible and fun for all gamers. 
+                    We believe that fitness shouldn't be a chore, but rather a fun and engaging activity that you look forward to each day. 
+                    Our app provides a comprehensive fitness experience, with a wide variety of workouts to choose from, along with tracking features to help you see your progress. 
+                    Whether you're a beginner or an experienced fitness enthusiast, our app has something for everyone.
+                </p>
+            </hgroup>
+
+            <hgroup>
+                <h2>FAQ:</h2>
+                <h3>Q: Why was this app created specifically for gamers?</h3>
+                <p>
+                    A: We believe that gamers have unique needs when it comes to fitness, and our app was created to meet those needs. 
+                    From gamified progress tracking to challenging workouts, our app is designed to keep gamers motivated and engaged in their fitness journey.
+                </p>
+            </hgroup>
+            <hgroup>
+                <h3>Q: Is this app suitable for all fitness levels?</h3>
+                <p>
+                    A: Yes! Our app provides a wide range of workouts, from beginner-friendly exercises to more advanced routines. 
+                    Whether you're just starting out or you're a seasoned fitness enthusiast, our app has something for you.
+                </p>
+            </hgroup>
+            <hgroup>
+                <h3>Q: Can I track my progress with the app?</h3>
+                <p>
+                    A: Absolutely! Our app includes tracking features to help you see your progress, and provides a fun and engaging way to stay motivated. 
+                    You can track your progress over time, see your personal bests, and compare your progress with other gamers.
+                </p>
+            </hgroup>
+            <hgroup>
+                <h3>Q: Do I need any special equipment to use the app?</h3>
+                <p>
+                    A: No, our app is designed to be used with just your bodyweight. 
+                    All exercises can be done at home or on the go, so you don't need any special equipment to get started.
+                </p>
+            </hgroup>
+        </main>
     </Layout>
 </template>
 
