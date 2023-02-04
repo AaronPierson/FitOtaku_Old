@@ -11,8 +11,8 @@
     </ul>
   </nav>
   <div class="log-in-out" >
-      <Link href="/logout" method="post" role="button">Log In</Link>
-    <!-- <button @click="logout" v-else>Log Out</button> -->
+      <Link href="/login"  role="button">Log In</Link>
+      <Link href="/logout" method="post"  role="button">Logout</Link>
   </div>
 </header>
 

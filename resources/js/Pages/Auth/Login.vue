@@ -8,7 +8,7 @@
             <li><Link href="/">Home</Link></li>
             <li>  
                 <div class="log-in-out" >
-                <a href="/logout" method="post" as="button">Log In</a>
+                  <li><Link href="/users/create" method="get" role="button">Sign Up</Link></li>
                 <!-- <button @click="logout" v-else>Log Out</button> -->
             </div>
             </li>
@@ -22,16 +22,18 @@
             <h1>Sign in</h1>
             <h2>A minimalist layout for Login pages</h2>
           </hgroup>
-          <form data-bitwarden-watching="1">
-            <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required="">
-            <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="">
+          <form data-bitwarden-watching="1" @submit.prevent="submit">
+            <input type="email" name="email" v-model="form.email" placeholder="Email" aria-label="Email" autocomplete="nickname" required="">
+            <div v-if="form.errors.email" v-text="form.errors.email" class="error"></div>
+            <input type="password" name="password" v-model="form.password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="">
+            <div v-if="form.errors.password" v-text="form.errors.password" class="error"></div>
             <fieldset>
               <label for="remember">
-                <input type="checkbox" role="switch" id="remember" name="remember">
+                <input type="checkbox" role="switch" id="remember" name="remember" v-model="form.remember">
                 Remember me
               </label>
             </fieldset>
-            <button type="submit" class="contrast" onclick="event.preventDefault()">Login</button>
+            <button type="submit" class="contrast" :disabled="form.processing">Login</button>
           </form>
         </div>
         <div></div>
@@ -55,43 +57,27 @@ export default {
 </script>
 
 <script setup>
-import {reactive} from "vue";
-import { router } from '@inertiajs/vue3';
-
-
-let form = reactive({
+// import { router } from '@inertiajs/vue3'
+import { useForm} from '@inertiajs/vue3'
+let form = useForm({
     email: '',
-    password: ''
+    password: '',
+    remember: false,
 });
 
 let submit = () => {
-    router.post('/login', form);
+    form.post('login');
 };
 </script>
 
 <style scoped>
     main {
-        margin: 10% auto;
-        padding: 20px;
+        margin: 0% auto;
+        margin-bottom: 10%;
         text-align: center;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
-    /* input {
-        margin-bottom: 10px;
-    } */
+
     footer{
-        /* position: fixed; */
-        /* bottom: 0; */
-        /* line-height: 60px; */
-        /* border-top: 1px solid #e5e5e5; */
         width: 100%;
         text-align: center;
     }
