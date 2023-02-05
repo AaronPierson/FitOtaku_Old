@@ -17695,7 +17695,7 @@ var __default__ = {
       message: ''
     });
     var submit = function submit() {
-      _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_1__.router.post('/contact', form);
+      _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_1__.router.post('/Contact', form);
     };
     var __returned__ = {
       get form() {
@@ -17999,31 +17999,16 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Our app was created with the goal of making fitness accessible and fun for all gamers. We believe that fitness shouldn't be a chore, but rather a fun and engaging activity that you look forward to each day. Our app provides a comprehensive fitness experience, with a wide variety of workouts to choose from, along with tracking features to help you see your progress. Whether you're a beginner or an experienced fitness enthusiast, our app has something for everyone. ", -1 /* HOISTED */);
 });
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "FAQ:", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("details", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "FAQ:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("summary", null, "Q: Why was this app created specifically for gamers?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: We believe that gamers have unique needs when it comes to fitness, and our app was created to meet those needs. From gamified progress tracking to challenging workouts, our app is designed to keep gamers motivated and engaged in their fitness journey. ")], -1 /* HOISTED */);
 });
 var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Q: Why was this app created specifically for gamers?", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("details", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("summary", null, "Q: Is this app suitable for all fitness levels?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: Yes! Our app provides a wide range of workouts, from beginner-friendly exercises to more advanced routines. Whether you're just starting out or you're a seasoned fitness enthusiast, our app has something for you. ")], -1 /* HOISTED */);
 });
 var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: We believe that gamers have unique needs when it comes to fitness, and our app was created to meet those needs. From gamified progress tracking to challenging workouts, our app is designed to keep gamers motivated and engaged in their fitness journey. ", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("details", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("summary", null, "Q: Can I track my progress with the app?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: Absolutely! Our app includes tracking features to help you see your progress, and provides a fun and engaging way to stay motivated. You can track your progress over time, see your personal bests, and compare your progress with other gamers. ")], -1 /* HOISTED */);
 });
 var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Q: Is this app suitable for all fitness levels?", -1 /* HOISTED */);
-});
-var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: Yes! Our app provides a wide range of workouts, from beginner-friendly exercises to more advanced routines. Whether you're just starting out or you're a seasoned fitness enthusiast, our app has something for you. ", -1 /* HOISTED */);
-});
-var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Q: Can I track my progress with the app?", -1 /* HOISTED */);
-});
-var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: Absolutely! Our app includes tracking features to help you see your progress, and provides a fun and engaging way to stay motivated. You can track your progress over time, see your personal bests, and compare your progress with other gamers. ", -1 /* HOISTED */);
-});
-var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Q: Do I need any special equipment to use the app?", -1 /* HOISTED */);
-});
-var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: No, our app is designed to be used with just your bodyweight. All exercises can be done at home or on the go, so you don't need any special equipment to get started. ", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("details", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("summary", null, "Q: Do I need any special equipment to use the app?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " A: No, our app is designed to be used with just your bodyweight. All exercises can be done at home or on the go, so you don't need any special equipment to get started. ")], -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -18041,29 +18026,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [_hoisted_4, _hoisted_5];
         }),
         _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_6, _hoisted_7, _hoisted_8];
-        }),
-        _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_9, _hoisted_10];
-        }),
-        _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_11, _hoisted_12];
-        }),
-        _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_13, _hoisted_14];
-        }),
-        _: 1 /* STABLE */
-      })])])];
+      }), _hoisted_6, _hoisted_7, _hoisted_8, _hoisted_9])])];
     }),
-
     _: 1 /* STABLE */
   });
 }
@@ -18429,17 +18393,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Layout");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Layout, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_7, _hoisted_8];
         }),
         _: 1 /* STABLE */
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_10, _hoisted_11];
         }),
         _: 1 /* STABLE */
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_13, _hoisted_14];
         }),
@@ -20964,7 +20928,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  /* margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%; */\r\n  /* display: flex; */\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.features[data-v-6a63e488]{\r\n  /* background-color: #160801; */\n}\nbutton[data-v-6a63e488]{\r\n    /* background-color: #DAA520;\r\n    border-radius: 5%;\r\n    border: none; */\r\n    /* width: 50%; */\r\n    /* height: 50px; */\n}\r\n\r\n/* h1 {\r\n    font-size: 36px;\r\n    margin: 0;\r\n} */\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    /* background-color: #F7EDE5; */\r\n    /* border-radius: 10px; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\n#leaderboard[data-v-6a63e488]{\r\n  margin: 10%;\r\n  padding: 10%;\n}\r\n\r\n/* .cta{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\r\n} */\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  /* margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%; */\r\n  /* display: flex; */\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.features[data-v-6a63e488]{\r\n  /* background-color: #160801; */\n}\nbutton[data-v-6a63e488]{\r\n    /* background-color: #DAA520;\r\n    border-radius: 5%;\r\n    border: none; */\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\r\n    /* height: 50px; */\n}\r\n\r\n/* h1 {\r\n    font-size: 36px;\r\n    margin: 0;\r\n} */\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    /* background-color: #F7EDE5; */\r\n    /* border-radius: 10px; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\r\n\r\n/* #leaderboard{\r\n  margin: 10%;\r\n  padding: 10%;\r\n} */\r\n\r\n/* .cta{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\r\n} */\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

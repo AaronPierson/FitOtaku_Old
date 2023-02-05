@@ -36,12 +36,32 @@ Route::get('/Contact', function() {
 
 // submit contact form
 Route::post('/Contact', function(Request $request) {
-    $validated = $request->validate([
-        'name' => 'required',
-        'email' => ['required', 'email'],
-        'message' => 'required',
+    
+    $credentials = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', config('services.sendinblue.key'));
+    $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(new GuzzleHttp\Client(),$credentials);
+    
+    //get data from form
+    $name = $request->input('name');
+    $email = $request->input('email');
+    $message = $request->input('message');
+    // dd($name, $email, $message);
+    //create email
+    $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail([
+         'subject' => 'from the PHP SDK!',
+         'sender' => ['name' => $name, 'email' => $email],
+         'replyTo' => ['name' => 'Sendinblue', 'email' => 'contact@sendinblue.com'],
+         'to' => [[ 'name' => 'Max Mustermann', 'email' => 'rpgames2@live.com']],
+         'htmlContent' => '<html><body><h1>This is a transactional email {{params.bodyMessage}}</h1></body></html>',
+         'params' => ['bodyMessage' => $message]
     ]);
-     dd($validated);
+    //send email
+    try {
+        $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+        // dd($result);
+    } catch (Exception $e) {
+        echo $e->getMessage(),PHP_EOL;
+        return redirect('/')->with('error', 'Your message has not been sent');
+    }
     return redirect('/')->with('success', 'Your message has been sent');
 });
 
