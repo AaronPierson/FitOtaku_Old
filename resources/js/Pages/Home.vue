@@ -2,7 +2,7 @@
     <Layout>
       <main class="container" >
       <section class="hero">
-        <h1>Fitness Quest</h1>
+        <h1>Otaku Quest</h1>
         <h2>Join the Adventure!</h2>
         <p>Discover new ways to get fit and healthy with our unique workout program.</p>
         <a href="#" class="btn">
@@ -86,8 +86,6 @@ section {
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .features{
   /* background-color: #160801; */
