@@ -10,12 +10,22 @@
       <li><Link href="/Contact">Contact</Link></li>
     </ul>
     <ul>
-        <li>
-          <Link href="/login"  role="button">Log In</Link>
-        </li>
-        <li>
-          <Link href="/users/create" class="secondary" role="button">Sign Up</Link>
-        </li>
+        <template v-if="isAuthenticated">
+          <li>
+              <Link href="/users/show" role="button">Dashboard</Link>
+          </li>
+            <li>
+                <Link href="/logout" role="button" class="secondary">Log Out</Link>
+            </li>
+        </template>
+        <template v-else>
+            <li>
+              <Link href="/login" role="button">Log In</Link>
+            </li>
+            <li>
+              <Link href="/users/create" class="secondary" role="button">Sign Up</Link>
+            </li>
+        </template>
     </ul>
   </nav>
 </header>
@@ -23,11 +33,30 @@
 </template>
 <script>
     import {Link} from '@inertiajs/vue3';
+    import axios from 'axios';
     export default {
         components: {
             Link
         },
+        data() {
+    return {
+      authenticated: false
     };
+  },
+  mounted() {
+    console.log('the nav is mounted');
+    axios.get('/api/auth/status')
+      .then(response => {
+        this.authenticated = response.data.authenticated;
+        console.log(this.authenticated);
+      });
+  },
+  computed: {
+    isAuthenticated() {
+      return this.authenticated;
+    }
+  }
+};
 </script>
 <style scope>
 

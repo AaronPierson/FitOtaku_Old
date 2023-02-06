@@ -6,6 +6,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 
 /*
@@ -72,13 +74,11 @@ Route::post('/users', [UsersController::class, 'store']);
 
 // only authenticated users can access this route
 Route::middleware('auth')->group(function(){
-    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
     // Shows a list of all users
     Route::get('users', [UsersController::class, 'index']);
     // Shows a single user profile
     Route::get('users/show', [UsersController::class, 'show']);
 });
-
 
 // login page
 Route::get('login', [LoginController::class, 'create'])->name('login');
@@ -88,3 +88,7 @@ Route::post('login', [LoginController::class, 'store']);
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 
+Route::get('/api/auth/status', function () {
+    // dd(Auth::check());
+    return response()->json(['authenticated' => Auth::check()]);
+});

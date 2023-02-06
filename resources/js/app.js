@@ -15,3 +15,4 @@ createInertiaApp({
 });
 
 // NProgress.init({ color: '#4B5563' });
+

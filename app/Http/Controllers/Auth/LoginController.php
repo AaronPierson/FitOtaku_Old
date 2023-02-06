@@ -12,6 +12,11 @@ class LoginController extends Controller
 {
     //
     public function create(){
+        //check if user is logged in
+        if (Auth::check()) {
+            return redirect('users/show');
+        }
+        //login page
         return Inertia::render('Auth/Login');
     }
 

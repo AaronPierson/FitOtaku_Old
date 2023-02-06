@@ -11,26 +11,34 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-    public function index() {   
-        // return Inertia::render('Dashboard', [
-        //     'users' => User::all()->map(fn($user) => [
-        //         'name' => $user->name,
-        //     ])
-        // ]);
-    }
+    // public function index() {   
+    //     return Inertia::render('Dashboard', [
+    //         'users' => User::all()->map(fn($user) => [
+    //             'name' => $user->name,
+    //         ])
+    //     ]);
+    // }
 
     public function show()
     {
         $id = Auth::id(); 
-        // dd($id);
+        if($id == null) {
+            return redirect('users/create');
+        }
         $user = User::find($id);
-        return Inertia::render('/Users/Show', [
-            'User' => $user
+        return Inertia::render('Users/Show', [
+            'User' => $user,
+            'authenticated' => true
         ]);
     }
 
     public function create()
     {
+            //check if user is logged in
+            if (Auth::check()) {
+                return redirect('users/show');
+            }
+            //login page
         return Inertia::render('Users/Create');
     }
 
