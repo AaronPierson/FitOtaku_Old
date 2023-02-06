@@ -1,5 +1,5 @@
 <template>
-   <Nav />
+   <Nav/>
    <slot/>
    <Footer/>
 </template>
@@ -10,6 +10,8 @@ import Nav from './Nav';
 import Footer from './Footer';
 
 export default {
-    components: {Nav, Footer,}
+    components: {Nav, Footer,},
+    props: ['authenticated'],
+
 };
 </script>
