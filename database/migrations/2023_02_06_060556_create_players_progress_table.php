@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('players_progress', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamps('created_at');
+            $table->timestamps('updated_at');
+            $table->string('player_id');
+            $table->integer('level');
+            $table->integer('xp');
+            $table->integer('gold');
+            
         });
     }
 

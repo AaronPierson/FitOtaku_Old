@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('spells', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('description');
+            $table->string('image');
+            $table->enum('type', ['throwable', 'self_cast', 'misc']);
+
         });
     }
 
