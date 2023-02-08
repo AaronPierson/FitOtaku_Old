@@ -162,10 +162,6 @@
           <label for="body-fat">Body Fat %:</label>
           <input type="number" id="body-fat" />
         </div>
-        <div>
-          <label for="notes">Notes:</label>
-          <textarea rows="4" id="notes"></textarea>
-        </div>
       `;
           this.modalFooter = "Add Weight";
           break;
