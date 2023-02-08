@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('calories', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             //User ID of the user who created the entry (foreign key)
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //Date of the entry
@@ -32,7 +31,7 @@ return new class extends Migration
             //Calories per serving
             $table->integer('calories_per_serving');
             //Date consumed
-            $table->timestamp('date_consumed');
+            $table->timestamp('date_consumed')->nullable();
 
         });
     }

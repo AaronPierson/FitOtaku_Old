@@ -30,7 +30,7 @@ return new class extends Migration
             //Age
             $table->integer('age');
             //Profile picture
-            $table->blob('profile_pic');
+            $table->binary('profile_pic');
             //Bio
             $table->string('bio');
             //health stat

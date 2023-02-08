@@ -18,11 +18,9 @@ return new class extends Migration
             $table->timestamps();
             $table->String('name');
             $table->String('description');
-            $table->String('type');
             $table->String('difficulty');
             $table->String('equipment');
             $table->String('image');
-            $table->String('video');
             $table->String('instructions');
         });
     }

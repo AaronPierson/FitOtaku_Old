@@ -18,7 +18,6 @@ return new class extends Migration
         Schema::create('weights', function (Blueprint $table) {
             $table->id();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamps('taken_at');
             //weight in pounds
             $table->integer('weight');
             //body fat percentage
@@ -26,7 +25,7 @@ return new class extends Migration
             //User ID of the user who created the entry (foreign key)
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             //Weigh in Date
-            $table->timestamp('weigh_in_date');
+            $table->timestamp('weigh_in_date')->nullable();
         });
     }
 
