@@ -30,12 +30,12 @@ class UsersController extends Controller
         // $workouts = Workout::whereHas('exercises', function ($query) use ($user_id) {
         //     $query->where('user_id', $user_id);
         // })->get();
-//         $workout = Workout::find(1);
-// foreach ($workout->exercises as $exercise) {
-//     $reps = $exercise->pivot->reps;
-//     $sets = $exercise->pivot->sets;
-//     // Use the reps and sets information as needed
-//}
+        //         $workout = Workout::find(1);
+        // foreach ($workout->exercises as $exercise) {
+        //     $reps = $exercise->pivot->reps;
+        //     $sets = $exercise->pivot->sets;
+        //     // Use the reps and sets information as needed
+        //}
         $user = User::find($id);
         return Inertia::render('Users/Show', [
             'User' => $user,

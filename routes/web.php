@@ -78,6 +78,8 @@ Route::middleware('auth')->group(function(){
     Route::get('users', [UsersController::class, 'index']);
     // Shows a single user profile
     Route::get('users/show', [UsersController::class, 'show']);
+    // show a player profile
+    Route::get('players/p1', [PlayerController::class, 'show']);
 });
 
 // login page
