@@ -16,6 +16,19 @@ return new class extends Migration
         Schema::create('excercises', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('description');
+            $table->blob('image');
+            $table->blob('video');
+            $table->string('category');
+            $table->string('difficulty');
+            $table->string('equipment');
+            $table->string('muscle_group');
+            $table->string('exercise_level');
+            $table->string('calories_burned');
+            $table->string('benefits');
+            $table->string('precautions');
+            $table->string('tips');
         });
     }
 

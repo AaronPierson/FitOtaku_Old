@@ -20105,7 +20105,7 @@ __webpack_require__.r(__webpack_exports__);
           break;
         case 'Add Weight':
           this.modalHeader = "Add Weight";
-          this.modalBody = "\n        <div>\n          <label for=\"weight\">Add Weight:</label>\n          <input type=\"number\" id=\"weight\" />\n        </div>\n        <div>\n          <label for=\"body-fat\">Body Fat %:</label>\n          <input type=\"number\" id=\"body-fat\" />\n        </div>\n        <div>\n          <label for=\"notes\">Notes:</label>\n          <textarea rows=\"4\" id=\"notes\"></textarea>\n        </div>\n      ";
+          this.modalBody = "\n        <div>\n          <label for=\"weight\">Add Weight:</label>\n          <input type=\"number\" id=\"weight\" />\n        </div>\n        <div>\n          <label for=\"body-fat\">Body Fat %:</label>\n          <input type=\"number\" id=\"body-fat\" />\n        </div>\n      ";
           this.modalFooter = "Add Weight";
           break;
         case 'Add Calories':

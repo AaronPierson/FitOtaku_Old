@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('workouts', function (Blueprint $table) {
+        Schema::create('workout_exercise', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('description');
-            //user_id of the user who created the workout
+            $table->unsignedInteger('reps');
+            $table->unsignedInteger('sets');
+            //workout_id
+            $table->foreign('id')->references('id')->on('workouts')->onDelete('cascade');
+            //exercise_id
+            $table->foreign('id')->references('id')->on('exercises')->onDelete('cascade');
+            //user that created the workout
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
-            //excercise_id of the excercise that is part of the workout
-            $table->foreign('id')->references('id')->on('excercises')->onDelete('cascade');
             
         });
     }
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workouts');
+        Schema::dropIfExists('workout_exercise');
     }
 };

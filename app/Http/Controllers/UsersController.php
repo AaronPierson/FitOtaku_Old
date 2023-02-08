@@ -25,6 +25,17 @@ class UsersController extends Controller
         if($id == null) {
             return redirect('users/create');
         }
+
+        // $user_id = Auth::id();
+        // $workouts = Workout::whereHas('exercises', function ($query) use ($user_id) {
+        //     $query->where('user_id', $user_id);
+        // })->get();
+//         $workout = Workout::find(1);
+// foreach ($workout->exercises as $exercise) {
+//     $reps = $exercise->pivot->reps;
+//     $sets = $exercise->pivot->sets;
+//     // Use the reps and sets information as needed
+//}
         $user = User::find($id);
         return Inertia::render('Users/Show', [
             'User' => $user,
@@ -87,5 +98,18 @@ class UsersController extends Controller
         return redirect('/users')->with('success', 'User deleted!');
     }
 
+
+// In your controller or somewhere else where you're creating the relationship
+// $workout = Workout::find(1);
+// $exercise = Exercise::find(2);
+// $user_id = Auth::id();
+// $workout->exercises()->attach($exercise->id, ['user_id' => $user_id]);
+
+// $workout = Workout::find(1);
+// $exercise = Exercise::find(2);
+// $user_id = Auth::id();
+// $reps = 10;
+// $sets = 3;
+// $workout->exercises()->attach($exercise->id, ['user_id' => $user_id, 'reps' => $reps, 'sets' => $sets]);
 
 }

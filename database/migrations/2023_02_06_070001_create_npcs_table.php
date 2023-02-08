@@ -17,10 +17,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('description');
+            $table->string('bio');
             $table->string('image');
             $table->string('location');
-            
             $table->string('favourite_food');
             $table->string('favourite_drink');
             $table->string('favourite_colour');
