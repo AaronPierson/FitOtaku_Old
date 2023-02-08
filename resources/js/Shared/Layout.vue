@@ -11,7 +11,5 @@ import Footer from './Footer';
 
 export default {
     components: {Nav, Footer,},
-    props: ['authenticated'],
-
 };
 </script>
