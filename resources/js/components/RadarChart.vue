@@ -1,11 +1,10 @@
 <template>
-<h2>Testing Vue Charts</h2>
 <Radar
-    id="my-chart-id"
     :options="chartOptions"
     :data="chartData"
   />
 </template>
+
 <script>
  
 import { Radar } from 'vue-chartjs'
@@ -29,7 +28,7 @@ ChartJS.register(
 )
 
 export default {
-  name: 'Radar',
+  name: 'RadarChart',
   components: { Radar },
   data() {
     return {
@@ -44,16 +43,6 @@ export default {
           'Running' 
         ],
         datasets: [
-    {
-      label: 'My First dataset',
-      backgroundColor: 'rgba(179,181,198,0.2)',
-      borderColor: 'rgba(179,181,198,1)',
-      pointBackgroundColor: 'rgba(179,181,198,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(179,181,198,1)',
-      data: [10, 10, 10, 10, 10, 10, 10]
-    },
     {
       label: 'My Second dataset',
       backgroundColor: 'rgba(255,99,132,0.2)',
