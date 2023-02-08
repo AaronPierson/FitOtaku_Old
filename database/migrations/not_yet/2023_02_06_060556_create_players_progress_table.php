@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_classes', function (Blueprint $table) {
+        Schema::create('players_progress', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamps('created_at');
+            // Player ID
+
+            $table->integer('level');
+            $table->integer('xp');
+            $table->integer('gold');
+            
         });
     }
 
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_classes');
+        Schema::dropIfExists('players_progress');
     }
 };

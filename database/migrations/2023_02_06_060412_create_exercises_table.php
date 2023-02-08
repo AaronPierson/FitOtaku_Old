@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('excercises', function (Blueprint $table) {
+        Schema::create('exercises', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->blob('image');
-            $table->blob('video');
+            $table->binary('image');
+            $table->binary('video');
             $table->string('category');
             $table->string('difficulty');
             $table->string('equipment');
@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('calories_burned');
             $table->string('benefits');
             $table->string('precautions');
-            $table->string('tips');
         });
     }
 
