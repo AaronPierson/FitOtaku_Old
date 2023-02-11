@@ -1,6 +1,4 @@
 <template>
-  <transition>
-  
     <dialog ref="dialog" :open="isModalOpenProp">
       <article ref="article">
         <header>
@@ -14,14 +12,12 @@
             <div v-html="modalBody"></div>            
           </slot>
         </section>
+
         <footer>
           <button @click="closeModal">Close</button>
-          <button @click="saveModal">Save</button>
-          <!-- <slot name="footer"></slot> -->
         </footer>
       </article>
     </dialog>
-  </transition>
 
 </template>
 
@@ -31,6 +27,12 @@ export default {
   methods: {
     closeModal() {
       this.$emit("close");
+    },
+    saveModal() {
+      console.log("saveModal");
+      // this.$emit("save");
+      // this.closeModal();
+
     },
   },
   mounted() {
@@ -58,7 +60,7 @@ header{
   /* background-color: #f1f1f1; */
   text-align: center;
   
-  }
+}
 
 footer{
   width: initial !important;
