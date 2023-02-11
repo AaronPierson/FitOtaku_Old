@@ -20056,10 +20056,10 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -20067,31 +20067,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.vue");
-/* harmony import */ var _components_BarChart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/BarChart */ "./resources/js/components/BarChart.vue");
-/* harmony import */ var _components_LineChart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/LineChart */ "./resources/js/components/LineChart.vue");
-/* harmony import */ var _components_RadarChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/RadarChart */ "./resources/js/components/RadarChart.vue");
-/* harmony import */ var _Shared_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/Modal */ "./resources/js/Shared/Modal.vue");
+/* harmony import */ var _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/vue3 */ "./node_modules/@inertiajs/vue3/dist/index.esm.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.vue");
+/* harmony import */ var _components_BarChart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/BarChart */ "./resources/js/components/BarChart.vue");
+/* harmony import */ var _components_LineChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/LineChart */ "./resources/js/components/LineChart.vue");
+/* harmony import */ var _components_RadarChart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/RadarChart */ "./resources/js/components/RadarChart.vue");
+/* harmony import */ var _Shared_Modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Shared/Modal */ "./resources/js/Shared/Modal.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+
+
+var __default__ = {
   props: ['User', 'isModalOpen'],
   components: {
-    Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    BarChart: _components_BarChart__WEBPACK_IMPORTED_MODULE_1__["default"],
-    LineChart: _components_LineChart__WEBPACK_IMPORTED_MODULE_2__["default"],
-    RadarChart: _components_RadarChart__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Modal: _Shared_Modal__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"],
+    BarChart: _components_BarChart__WEBPACK_IMPORTED_MODULE_2__["default"],
+    LineChart: _components_LineChart__WEBPACK_IMPORTED_MODULE_3__["default"],
+    RadarChart: _components_RadarChart__WEBPACK_IMPORTED_MODULE_4__["default"],
+    Modal: _Shared_Modal__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
     return {
       isModalOpen: false,
-      modalHeader: "",
-      modalBody: "",
-      modalFooter: ""
+      weightModal: false,
+      workoutModal: false,
+      caloriesModal: false,
+      calorieDate: ''
     };
   },
   methods: {
@@ -20099,32 +20105,143 @@ __webpack_require__.r(__webpack_exports__);
       this.isModalOpen = true;
       switch (content) {
         case 'Add Workout':
-          this.modalHeader = "Add Workout";
-          this.modalBody = "\n        <div>\n          <label for=\"workout-name\">Workout Name:</label>\n          <input type=\"text\" id=\"workout-name\" />\n        </div>\n        <div>\n          <label for=\"workout-duration\">Workout Duration (minutes):</label>\n          <input type=\"number\" id=\"workout-duration\" />\n        </div>\n      ";
-          //   this.modalFooter = "Job Board";
+          this.workoutModal = true;
           break;
         case 'Add Weight':
-          this.modalHeader = "Add Weight";
-          this.modalBody = "\n        <div>\n          <label for=\"weight\">Add Weight:</label>\n          <input type=\"number\" id=\"weight\" />\n        </div>\n        <div>\n          <label for=\"body-fat\">Body Fat %:</label>\n          <input type=\"number\" id=\"body-fat\" />\n        </div>\n      ";
-          this.modalFooter = "Add Weight";
+          this.weightModal = true;
           break;
         case 'Add Calories':
-          this.modalHeader = "Add Calories";
-          this.modalBody = "\n        <div>\n          <label for=\"type\">Meal Type:</label>\n          <details role=\"list\">\n            <summary aria-haspopup=\"listbox\">Dropdown</summary>\n            <ul role=\"listbox\">\n                <li>\n                    <label>\n                    <input type=\"radio\" id=\"breakfast\" name=\"size\" value=\"small\">\n                        Breakfast\n                    </label>\n                </li>\n                <li>\n                    <label>\n                    <input type=\"radio\" id=\"lunch\" name=\"size\" value=\"medium\">\n                        Lunch\n                    </label>\n                </li>\n                <li>\n                    <label>\n                    <input type=\"radio\" id=\"dinner\" name=\"size\" value=\"large\">\n                        Dinner\n                    </label>\n                </li>\n            </ul>\n            </details>  \n        </div>\n        <div>\n          <label for=\"Add Calories\">Add Calories:</label>\n          <input type=\"number\" id=\"workout-name\" />\n        </div>\n        <div>\n          <label for=\"food\">Food:</label>\n          <input type=\"text\" id=\"food\" />\n        </div>\n      ";
-          this.modalFooter = "Add Calories";
+          this.caloriesModal = true;
           break;
         default:
-          this.modalHeader = "Error";
-          this.modalBody = "Error";
-          this.modalFooter = "Error";
           break;
       }
     },
     closeModal: function closeModal() {
       this.isModalOpen = false;
+      this.workoutModal = false;
+      this.weightModal = false;
+      this.caloriesModal = false;
     }
+  },
+  mounted: function mounted() {
+    //get calories data from db
+    axios__WEBPACK_IMPORTED_MODULE_6___default().get('/api/calories').then(function (response) {
+      console.log('Calorie Data: ', response.data); //response.data[0].calories
+    })["catch"](function (error) {
+      console.error('Error while fetching calories data: ', error);
+    });
+    //get weight data from db
+    axios__WEBPACK_IMPORTED_MODULE_6___default().get('/api/weight').then(function (response) {
+      console.log('Weight Data: ', response.data); //response.data[0].calories
+    })["catch"](function (error) {
+      console.error('Error while fetching calories data: ', error);
+    });
   }
-});
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  __name: 'Show',
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+
+    // import { router } from '@inertiajs/vue3'
+    var workoutForm = (0,_inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      name: ''
+    });
+    var weightForm = (0,_inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      weight: '',
+      body_fat: '25',
+      date: ''
+    });
+    var caloriesForm = (0,_inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      calories: '',
+      date: ''
+    });
+    var submit = function submit() {
+      if (workoutForm.name != '') {
+        console.log('workoutForm.name: ', workoutForm.name);
+        // workoutForm.post('/workouts', {
+        //     onSuccess: () => {
+        //         console.log('success: workout')
+        //         workoutForm.reset()
+        //     }
+        // });
+      }
+
+      if (weightForm.weight != '') {
+        console.log('weightForm.weight: ', weightForm.weight);
+        weightForm.post('/weight', {
+          onSuccess: function onSuccess() {
+            console.log('success: weight');
+            weightForm.reset();
+          }
+        });
+      }
+      if (caloriesForm.calories != '') {
+        console.log('caloriesForm.calories: ', caloriesForm.calories);
+        caloriesForm.post('/calories', {
+          onSuccess: function onSuccess() {
+            console.log('success: calories');
+            caloriesForm.reset();
+          }
+        });
+      }
+    };
+    var __returned__ = {
+      get workoutForm() {
+        return workoutForm;
+      },
+      set workoutForm(v) {
+        workoutForm = v;
+      },
+      get weightForm() {
+        return weightForm;
+      },
+      set weightForm(v) {
+        weightForm = v;
+      },
+      get caloriesForm() {
+        return caloriesForm;
+      },
+      set caloriesForm(v) {
+        caloriesForm = v;
+      },
+      get submit() {
+        return submit;
+      },
+      set submit(v) {
+        submit = v;
+      },
+      get Layout() {
+        return _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"];
+      },
+      get BarChart() {
+        return _components_BarChart__WEBPACK_IMPORTED_MODULE_2__["default"];
+      },
+      get LineChart() {
+        return _components_LineChart__WEBPACK_IMPORTED_MODULE_3__["default"];
+      },
+      get RadarChart() {
+        return _components_RadarChart__WEBPACK_IMPORTED_MODULE_4__["default"];
+      },
+      get Modal() {
+        return _Shared_Modal__WEBPACK_IMPORTED_MODULE_5__["default"];
+      },
+      get axios() {
+        return (axios__WEBPACK_IMPORTED_MODULE_6___default());
+      },
+      get useForm() {
+        return _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm;
+      }
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+}));
 
 /***/ }),
 
@@ -20189,6 +20306,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     closeModal: function closeModal() {
       this.$emit("close");
+    },
+    saveModal: function saveModal() {
+      console.log("saveModal");
+      // this.$emit("save");
+      // this.closeModal();
     }
   },
   mounted: function mounted() {
@@ -20235,7 +20357,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     var _this = this;
-    console.log('the nav is mounted');
+    // console.log('the nav is mounted');
     axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/auth/status').then(function (response) {
       _this.authenticated = response.data.authenticated;
       console.log(_this.authenticated);
@@ -20325,6 +20447,9 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
         maintainAspectRatio: true
       }
     };
+  },
+  mounted: function mounted() {
+    //
   }
 });
 
@@ -21059,16 +21184,14 @@ var _hoisted_14 = {
   "class": "calories-track"
 };
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Calories/Food Tracking", -1 /* HOISTED */);
-var _hoisted_16 = ["innerHTML"];
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Workout", -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Weight", -1 /* HOISTED */);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Calories", -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_RadarChart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("RadarChart");
-  var _component_LineChart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("LineChart");
-  var _component_BarChart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BarChart");
-  var _component_Modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Modal");
-  var _component_Layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Layout");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Layout, null, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Layout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User name, class and stats "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.User.name), 1 /* TEXT */), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Current Class: {{currentClass}}</p> "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RadarChart), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Stats: {{stats}}</p> ")])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"quests\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Quest section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4>Quests</h4> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"quest in quests\">\r\n                    {{quest}}\r\n                    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"contrast\" v-on:click=\"openModal('Job Board')\">\r\n                        Go to Job Board\r\n                    </button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </article> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Workouts section "), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"workout in workouts\">\r\n            {{workout}}\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User name, class and stats "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.User.name), 1 /* TEXT */), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Current Class: {{currentClass}}</p> "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RadarChart"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Stats: {{stats}}</p> ")])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"quests\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Quest section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4>Quests</h4> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"quest in quests\">\r\n                    {{quest}}\r\n                    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"contrast\" v-on:click=\"openModal('Job Board')\">\r\n                        Go to Job Board\r\n                    </button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </article> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Workouts section "), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"workout in workouts\">\r\n            {{workout}}\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: _cache[0] || (_cache[0] = function ($event) {
           return $options.openModal('Add Workout');
         })
@@ -21077,30 +21200,107 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return $options.openModal('Add Weight');
         })
-      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_LineChart)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Calories/Food tracking section "), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter food\">\r\n                <input type=\"text\" placeholder=\"Enter calories\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LineChart"], {
+        ref: "lineChart"
+      }, null, 512 /* NEED_PATCH */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Calories/Food tracking section "), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter food\">\r\n                <input type=\"text\" placeholder=\"Enter calories\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         type: "button",
         onClick: _cache[2] || (_cache[2] = function ($event) {
           return $options.openModal('Add Calories');
         })
-      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BarChart)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Journal section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"journal\">\r\n            <h4>Journal</h4>\r\n            <form>\r\n            <textarea id=\"journal\" rows=\"3\" class=\"form-control\" placeholder=\"Enter your thoughts for today...\"></textarea>\r\n            <button>Save</button>\r\n            </form>\r\n            <div class=\"col-md-6\">\r\n            <h2>Today's Journal</h2>\r\n            <p id=\"today-journal\"></p>\r\n            </div>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Fasting section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"fasting\">\r\n            <h4>Fasting</h4>\r\n            <form>\r\n            <input type=\"text\" placeholder=\"Enter fasting hours\">\r\n            <button>Save</button>\r\n            </form>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
+      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LineChart"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Journal section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"journal\">\r\n            <h4>Journal</h4>\r\n            <form>\r\n            <textarea id=\"journal\" rows=\"3\" class=\"form-control\" placeholder=\"Enter your thoughts for today...\"></textarea>\r\n            <button>Save</button>\r\n            </form>\r\n            <div class=\"col-md-6\">\r\n            <h2>Today's Journal</h2>\r\n            <p id=\"today-journal\"></p>\r\n            </div>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Fasting section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"fasting\">\r\n            <h4>Fasting</h4>\r\n            <form>\r\n            <input type=\"text\" placeholder=\"Enter fasting hours\">\r\n            <button>Save</button>\r\n            </form>\r\n        </article> "), $data.workoutModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
+        key: 0,
         isModalOpenProp: $data.isModalOpen,
         onClose: $options.closeModal
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.modalHeader), 1 /* TEXT */)];
+          return [_hoisted_16];
         }),
-
         body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-            innerHTML: $data.modalBody
-          }, null, 8 /* PROPS */, _hoisted_16), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{ modalBody }} ")];
-        }),
-        footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.modalFooter), 1 /* TEXT */)];
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+            onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+              return $setup.submit && $setup.submit.apply($setup, arguments);
+            }, ["prevent"]))
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+            type: "text",
+            "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+              return $setup.workoutForm.name = $event;
+            }),
+            placeholder: "Add Workout"
+          }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.workoutForm.name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+            onClick: _cache[4] || (_cache[4] = function () {
+              return _ctx.saveModal && _ctx.saveModal.apply(_ctx, arguments);
+            })
+          }, "Save")], 32 /* HYDRATE_EVENTS */)];
         }),
 
         _: 1 /* STABLE */
-      }, 8 /* PROPS */, ["isModalOpenProp", "onClose"])])];
+      }, 8 /* PROPS */, ["isModalOpenProp", "onClose"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.weightModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
+        key: 1,
+        isModalOpenProp: $data.isModalOpen,
+        onClose: $options.closeModal
+      }, {
+        header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_17];
+        }),
+        body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+            onSubmit: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+              return $setup.submit && $setup.submit.apply($setup, arguments);
+            }, ["prevent"]))
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+            type: "number",
+            "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+              return $setup.weightForm.weight = $event;
+            }),
+            placeholder: "Add Weight"
+          }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.weightForm.weight]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+            type: "date",
+            "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+              return $setup.weightForm.date = $event;
+            }),
+            placeholder: "Add Date"
+          }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.weightForm.date]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+            onClick: _cache[8] || (_cache[8] = function () {
+              return _ctx.saveModal && _ctx.saveModal.apply(_ctx, arguments);
+            })
+          }, "Save")], 32 /* HYDRATE_EVENTS */)];
+        }),
+
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["isModalOpenProp", "onClose"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.caloriesModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
+        key: 2,
+        isModalOpenProp: $data.isModalOpen,
+        onClose: $options.closeModal
+      }, {
+        header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_18];
+        }),
+        body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+            onSubmit: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+              return $setup.submit && $setup.submit.apply($setup, arguments);
+            }, ["prevent"]))
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+            type: "number",
+            "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+              return $setup.caloriesForm.calories = $event;
+            }),
+            placeholder: "Add Calories"
+          }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.caloriesForm.calories]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+            type: "date",
+            "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
+              return $setup.caloriesForm.date = $event;
+            }),
+            placeholder: "Add Date"
+          }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.caloriesForm.date]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+            onClick: _cache[12] || (_cache[12] = function () {
+              return _ctx.saveModal && _ctx.saveModal.apply(_ctx, arguments);
+            })
+          }, "Save")], 32 /* HYDRATE_EVENTS */)];
+        }),
+
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["isModalOpenProp", "onClose"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
     }),
     _: 1 /* STABLE */
   });
@@ -21178,29 +21378,20 @@ var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
 });
 var _hoisted_4 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, null, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dialog", {
-        ref: "dialog",
-        open: $props.isModalOpenProp
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header", {}, function () {
-        return [_hoisted_3];
-      }, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "body", {}, function () {
-        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-          innerHTML: _ctx.modalBody
-        }, null, 8 /* PROPS */, _hoisted_4)];
-      }, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        onClick: _cache[0] || (_cache[0] = function () {
-          return $options.closeModal && $options.closeModal.apply($options, arguments);
-        })
-      }, "Close"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        onClick: _cache[1] || (_cache[1] = function () {
-          return _ctx.saveModal && _ctx.saveModal.apply(_ctx, arguments);
-        })
-      }, "Save"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <slot name=\"footer\"></slot> ")])], 512 /* NEED_PATCH */)], 8 /* PROPS */, _hoisted_1)];
-    }),
-    _: 3 /* FORWARDED */
-  });
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("dialog", {
+    ref: "dialog",
+    open: $props.isModalOpenProp
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header", {}, function () {
+    return [_hoisted_3];
+  }, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "body", {}, function () {
+    return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      innerHTML: _ctx.modalBody
+    }, null, 8 /* PROPS */, _hoisted_4)];
+  }, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.closeModal && $options.closeModal.apply($options, arguments);
+    })
+  }, "Close")])], 512 /* NEED_PATCH */)], 8 /* PROPS */, _hoisted_1);
 }
 
 /***/ }),
@@ -31243,14 +31434,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Show_vue_vue_type_template_id_617ec9a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Show.vue?vue&type=template&id=617ec9a6 */ "./resources/js/Pages/Users/Show.vue?vue&type=template&id=617ec9a6");
-/* harmony import */ var _Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Show.vue?vue&type=script&lang=js */ "./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js");
+/* harmony import */ var _Show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Show.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var C_xampp_htdocs_larafit_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_larafit_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Show_vue_vue_type_template_id_617ec9a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Users/Show.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_larafit_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Show_vue_vue_type_template_id_617ec9a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Users/Show.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -31576,18 +31767,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js":
-/*!*******************************************************************!*\
-  !*** ./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js ***!
-  \*******************************************************************/
+/***/ "./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js ***!
+  \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Users/Show.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),

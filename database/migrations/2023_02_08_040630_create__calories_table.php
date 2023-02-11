@@ -20,16 +20,18 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //Date of the entry
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            //Updated at
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             //Calories consumed
             $table->integer('calories');
             //Meal type
-            $table->enum('meal_type', ['breakfast', 'lunch', 'dinner', 'snack']);
+            $table->enum('meal_type', ['breakfast', 'lunch', 'dinner', 'snack'])->nullable();
             //Food name
-            $table->string('food_name');
+            $table->string('food_name')->nullable();
             //Servings
-            $table->integer('servings');
+            $table->integer('servings')->nullable();
             //Calories per serving
-            $table->integer('calories_per_serving');
+            $table->integer('calories_per_serving')->nullable();
             //Date consumed
             $table->timestamp('date_consumed')->nullable();
 
