@@ -44,7 +44,7 @@
     };
   },
   mounted() {
-    console.log('the nav is mounted');
+    // console.log('the nav is mounted');
     axios.get('/api/auth/status')
       .then(response => {
         this.authenticated = response.data.authenticated;

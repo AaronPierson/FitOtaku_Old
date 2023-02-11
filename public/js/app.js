@@ -20447,9 +20447,6 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
         maintainAspectRatio: true
       }
     };
-  },
-  mounted: function mounted() {
-    //
   }
 });
 
