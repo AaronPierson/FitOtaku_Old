@@ -33,7 +33,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('users/show');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
