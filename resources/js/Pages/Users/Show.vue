@@ -54,10 +54,10 @@
                 <!-- <input type="text" placeholder="Enter weight"> -->
                 <button type="button" v-on:click="openModal('Add Weight')">Add</button>
                 </form>
-                <LineChart/>
+                <LineChart ref="lineChart"/>
 
             </article>
-
+            
             <article class="calories-track">
                 <!-- Calories/Food tracking section -->
                 <h4>Calories/Food Tracking</h4>
@@ -66,7 +66,7 @@
                 <input type="text" placeholder="Enter calories"> -->
                 <button type="button" v-on:click="openModal('Add Calories')">Add</button>
                 </form>
-                <BarChart/>
+                <LineChart/>
             </article>
         </div>
         
@@ -91,18 +91,40 @@
             <button>Save</button>
             </form>
         </article> -->
-        <Modal v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
-            <template v-slot:header>
-                <h1>{{ modalHeader }}</h1>
+        <Modal v-if="workoutModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
+            <template v-slot:header >
+                <h1 >Workout</h1>
+            </template>
+            <template v-slot:body>
+              <form @submit.prevent="submit">
+                  <input type="text" v-model="workoutForm.name" placeholder="Add Workout">
+                  <button @click="saveModal">Save</button>
+              </form>
+            </template>
+        </Modal>
+        <Modal v-if="weightModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
+          <template v-slot:header >
+                <h1 >Weight</h1>
             </template>
 
             <template v-slot:body>
-                <div v-html="modalBody"></div>
-                <!-- {{ modalBody }} -->
+                <form @submit.prevent="submit">
+                  <input type="number" v-model="weightForm.weight" placeholder="Add Weight">
+                  <input type="date" v-model="weightForm.date" placeholder="Add Date">
+                  <button @click="saveModal">Save</button>
+                </form>
             </template>
-
-            <template v-slot:footer>
-                {{ modalFooter }}
+        </Modal>
+        <Modal v-if="caloriesModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
+          <template v-slot:header >
+                <h1>Calories</h1>
+            </template>
+            <template v-slot:body>
+                <form @submit.prevent="submit">
+                  <input type="number" v-model="caloriesForm.calories" placeholder="Add Calories">
+                  <input type="date" v-model="caloriesForm.date" placeholder="Add Date">
+                  <button @click="saveModal">Save</button>
+                </form>
             </template>
         </Modal>
         </main>
@@ -115,6 +137,8 @@
     import LineChart from '../../components/LineChart';
     import RadarChart from '../../components/RadarChart';
     import Modal from '../../Shared/Modal';
+    import axios from 'axios';
+
     export default {
         props: ['User', 'isModalOpen'],
         components: {
@@ -127,9 +151,10 @@
     data() {
     return {
       isModalOpen: false,
-      modalHeader: "",
-      modalBody: "",
-      modalFooter: "",
+      weightModal: false,
+      workoutModal: false,
+      caloriesModal: false,
+      calorieDate: '',
     };
   },
   methods: {
@@ -138,84 +163,93 @@
 
       switch(content){
         case 'Add Workout':
-          this.modalHeader = "Add Workout";
-          this.modalBody = `
-        <div>
-          <label for="workout-name">Workout Name:</label>
-          <input type="text" id="workout-name" />
-        </div>
-        <div>
-          <label for="workout-duration">Workout Duration (minutes):</label>
-          <input type="number" id="workout-duration" />
-        </div>
-      `;
-        //   this.modalFooter = "Job Board";
+          this.workoutModal = true;
           break;
         case 'Add Weight':
-          this.modalHeader = "Add Weight";
-          this.modalBody = `
-        <div>
-          <label for="weight">Add Weight:</label>
-          <input type="number" id="weight" />
-        </div>
-        <div>
-          <label for="body-fat">Body Fat %:</label>
-          <input type="number" id="body-fat" />
-        </div>
-      `;
-          this.modalFooter = "Add Weight";
+          this.weightModal = true;
           break;
         case 'Add Calories':
-          this.modalHeader = "Add Calories";
-          this.modalBody = `
-        <div>
-          <label for="type">Meal Type:</label>
-          <details role="list">
-            <summary aria-haspopup="listbox">Dropdown</summary>
-            <ul role="listbox">
-                <li>
-                    <label>
-                    <input type="radio" id="breakfast" name="size" value="small">
-                        Breakfast
-                    </label>
-                </li>
-                <li>
-                    <label>
-                    <input type="radio" id="lunch" name="size" value="medium">
-                        Lunch
-                    </label>
-                </li>
-                <li>
-                    <label>
-                    <input type="radio" id="dinner" name="size" value="large">
-                        Dinner
-                    </label>
-                </li>
-            </ul>
-            </details>  
-        </div>
-        <div>
-          <label for="Add Calories">Add Calories:</label>
-          <input type="number" id="workout-name" />
-        </div>
-        <div>
-          <label for="food">Food:</label>
-          <input type="text" id="food" />
-        </div>
-      `;
-          this.modalFooter = "Add Calories";
+          this.caloriesModal = true;
           break;
         default:
-          this.modalHeader = "Error";
-          this.modalBody = "Error";
-          this.modalFooter = "Error";
           break;
       }
     },
     closeModal() {
       this.isModalOpen = false;
+      this.workoutModal = false;
+      this.weightModal = false;
+      this.caloriesModal = false;
+
     },
+  },
+  mounted() {
+     //get calories data from db
+    axios.get('/api/calories')
+      .then(response => {
+        console.log('Calorie Data: ', response.data); //response.data[0].calories
+      })
+      .catch(error => {
+        console.error('Error while fetching calories data: ', error);
+      });
+      //get weight data from db
+      axios.get('/api/weight')
+      .then(response => {
+        console.log('Weight Data: ', response.data); //response.data[0].calories
+      })
+      .catch(error => {
+        console.error('Error while fetching calories data: ', error);
+      });
   },
 };
 </script>
 
+<script setup>
+// import { router } from '@inertiajs/vue3'
+import { useForm} from '@inertiajs/vue3'
+let workoutForm = useForm({
+    name: ''
+});
+
+let weightForm = useForm({
+    weight: '',
+    body_fat: '25',
+    date: ''
+});
+
+let caloriesForm = useForm({
+    calories: '',
+    date: ''
+});
+
+let submit = () => {
+
+  if(workoutForm.name != ''){
+    console.log('workoutForm.name: ', workoutForm.name);
+    // workoutForm.post('/workouts', {
+    //     onSuccess: () => {
+    //         console.log('success: workout')
+    //         workoutForm.reset()
+    //     }
+    // });
+  }
+  if(weightForm.weight != ''){
+    console.log('weightForm.weight: ', weightForm.weight);
+    weightForm.post('/weight', {
+        onSuccess: () => {
+            console.log('success: weight')
+            weightForm.reset()
+        }
+    });
+  }
+  if(caloriesForm.calories != ''){
+    console.log('caloriesForm.calories: ', caloriesForm.calories);
+    caloriesForm.post('/calories', {
+        onSuccess: () => {
+            console.log('success: calories')
+            caloriesForm.reset()
+        }
+    });
+  }
+};
+</script>

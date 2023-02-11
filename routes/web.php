@@ -6,7 +6,14 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Weight;
+use App\Models\Calorie;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\WeightController;
+use App\Http\Controllers\CalorieController;
+use Carbon\Carbon;
+
+
 
 
 
@@ -94,3 +101,45 @@ Route::get('/api/auth/status', function () {
     // dd(Auth::check());
     return response()->json(['authenticated' => Auth::check()]);
 });
+//get user calories
+Route::get('/api/calories', function () {
+    try{
+        $id = Auth::id(); 
+        $calories = Calorie::where('user_id', $id)
+        ->whereBetween('date_consumed', [Carbon::now()->subDays(7), Carbon::now()])
+        ->pluck('date_consumed', 'calories')
+        ->toArray();
+        // ->select('calories', 'date_consumed' )->latest()->get();
+        return response()->json($calories);
+        } catch (Exception $e) {
+        echo $e->getMessage(),PHP_EOL;
+        //return error msg
+        return response()->json(['error' => 'There was an error retrieving your data']);
+
+    }
+
+});
+
+// get user weight
+Route::get('/api/weight', function () {
+    try{
+        $id = Auth::id(); 
+        $weight = Weight::where('user_id', $id)
+        ->select('weight', 'weigh_in_date')->latest()->take(7)->get();
+        return response()->json($weight);
+        } catch (Exception $e) {
+        echo $e->getMessage(),PHP_EOL;
+        //return error msg
+        return response()->json(['error' => 'There was an error retrieving your data']);
+
+    }
+
+});
+
+// send Weight data to database
+Route::post('/weight', [WeightController::class, 'store']);
+
+// send Calories data to database
+Route::post('/calories', [CalorieController::class, 'store']);
+// show calories data
+Route::get('/calories', [CalorieController::class, 'show']);
