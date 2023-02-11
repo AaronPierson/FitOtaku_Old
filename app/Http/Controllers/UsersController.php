@@ -63,6 +63,12 @@ class UsersController extends Controller
         ]);
             //create the user
         User::create($validated);
+
+        if (Auth::attempt($validated)) {
+            $request->session()->regenerate();
+            return redirect()->intended('users/show');
+        }
+        dd('error: ' . $validated);
             //redirect
         return redirect('/');
     }
