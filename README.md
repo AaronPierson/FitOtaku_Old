@@ -1,4 +1,4 @@
-## About larafit
+## About FitOtaku
 
 
 
