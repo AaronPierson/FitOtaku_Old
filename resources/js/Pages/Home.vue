@@ -2,13 +2,11 @@
     <Layout>
       <main class="container" >
       <section class="hero">
-        <h1>Otaku Quest</h1>
+        <h1>Fit Otaku Quest</h1>
         <h2>Join the Adventure!</h2>
         <p>Discover new ways to get fit and healthy with our unique workout program.</p>
         <a href="#" class="btn">
-          <button >
-            Learn More
-          </button>
+            <Link href="/About" role="button">Learn More</Link>
         </a>
       </section>
 
@@ -48,9 +46,8 @@
         <p>Sign up now and join the adventure!</p>
         
           <a href="#" class="btn">
-          <button >
-              Sign Up
-          </button>
+          <Link href="/users/create" role="button">Sign Up</Link>
+
         </a>
       </section>
     </main>
@@ -58,6 +55,7 @@
 </template>
 
 <script>
+import {Link} from '@inertiajs/vue3';
 import Layout from '../Shared/Layout';
 export default {
     components: {
@@ -100,6 +98,12 @@ button{
     display: block;
     width: 50%;
     /* height: 50px; */
+}
+Link{
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+    width: 50%;
 }
 
 /* h1 {
