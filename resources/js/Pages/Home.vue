@@ -5,9 +5,8 @@
         <h1>Fit Otaku Quest</h1>
         <h2>Join the Adventure!</h2>
         <p>Discover new ways to get fit and healthy with our unique workout program.</p>
-        <a href="#" class="btn">
-            <Link href="/About" role="button">Learn More</Link>
-        </a>
+        <Link href="/About" role="button">Learn More</Link>
+
       </section>
 
       <section class="fe-group">
@@ -45,10 +44,7 @@
         <h2>Ready to Start Your Quest?</h2>
         <p>Sign up now and join the adventure!</p>
         
-          <a href="#" class="btn">
           <Link href="/users/create" role="button">Sign Up</Link>
-
-        </a>
       </section>
     </main>
   </Layout>
@@ -60,6 +56,7 @@ import Layout from '../Shared/Layout';
 export default {
     components: {
       Layout,
+      Link
     },
 };
 </script>
@@ -85,9 +82,9 @@ section {
   align-items: center;
 }
 
-.features{
-  /* background-color: #160801; */
-}
+/* .features{
+  background-color: #160801;
+} */
 
 button{
     /* background-color: #DAA520;
