@@ -6,11 +6,14 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use App\Models\User;
+
 use App\Models\Weight;
 use App\Models\Calorie;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WeightController;
 use App\Http\Controllers\CalorieController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\WorkoutController;
 use Carbon\Carbon;
 
 
@@ -143,3 +146,6 @@ Route::post('/weight', [WeightController::class, 'store']);
 Route::post('/calories', [CalorieController::class, 'store']);
 // show calories data
 Route::get('/calories', [CalorieController::class, 'show']);
+
+//send workout data to database
+Route::post('/workout', [WorkoutController::class, 'store']);

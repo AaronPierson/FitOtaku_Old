@@ -10,7 +10,8 @@ class Workout extends Model
     use HasFactory;
     public function exercises()
     {
-        return $this->belongsToMany(Exercise::class)->withPivot('user_id');
+        return $this->belongsToMany(Exercise::class);
+
     }
 
 

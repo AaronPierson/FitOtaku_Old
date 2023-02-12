@@ -19921,11 +19921,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.vue");
+/* harmony import */ var _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/vue3 */ "./node_modules/@inertiajs/vue3/dist/index.esm.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Link: _inertiajs_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
   }
 });
 
@@ -20161,14 +20164,13 @@ var __default__ = {
     var submit = function submit() {
       if (workoutForm.name != '') {
         console.log('workoutForm.name: ', workoutForm.name);
-        // workoutForm.post('/workouts', {
-        //     onSuccess: () => {
-        //         console.log('success: workout')
-        //         workoutForm.reset()
-        //     }
-        // });
+        workoutForm.post('/workout', {
+          onSuccess: function onSuccess() {
+            console.log('success: workout');
+            workoutForm.reset();
+          }
+        });
       }
-
       if (weightForm.weight != '') {
         console.log('weightForm.weight: ', weightForm.weight);
         weightForm.post('/weight', {
@@ -20866,70 +20868,79 @@ var _withScopeId = function _withScopeId(n) {
 var _hoisted_1 = {
   "class": "container"
 };
-var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
-    "class": "hero"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Otaku Quest"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Join the Adventure!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Discover new ways to get fit and healthy with our unique workout program."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "#",
-    "class": "btn"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, " Learn More ")])], -1 /* HOISTED */);
+var _hoisted_2 = {
+  "class": "hero"
+};
+var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Fit Otaku Quest", -1 /* HOISTED */);
 });
-var _hoisted_3 = {
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Join the Adventure!", -1 /* HOISTED */);
+});
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Discover new ways to get fit and healthy with our unique workout program.", -1 /* HOISTED */);
+});
+var _hoisted_6 = {
   "class": "fe-group"
 };
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Features", -1 /* HOISTED */);
 });
-var _hoisted_5 = {
+var _hoisted_8 = {
   "class": "features"
 };
-var _hoisted_6 = {
-  "class": "feature"
-};
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Custom Workouts", -1 /* HOISTED */);
-});
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Choose from a variety of exercises to create your own workout program.", -1 /* HOISTED */);
-});
 var _hoisted_9 = {
   "class": "feature"
 };
 var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Goal Tracking", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Custom Workouts", -1 /* HOISTED */);
 });
 var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Track your progress and unlock rewards as you reach your fitness goals.", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Choose from a variety of exercises to create your own workout program.", -1 /* HOISTED */);
 });
 var _hoisted_12 = {
   "class": "feature"
 };
 var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Leaderboard", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Goal Tracking", -1 /* HOISTED */);
 });
 var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Track your progress and unlock rewards as you reach your fitness goals.", -1 /* HOISTED */);
+});
+var _hoisted_15 = {
+  "class": "feature"
+};
+var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Leaderboard", -1 /* HOISTED */);
+});
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "See where you stand among the top fitness gamers!", -1 /* HOISTED */);
 });
-var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
-    "class": "cta"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ready to Start Your Quest?"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Sign up now and join the adventure!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "#",
-    "class": "btn"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, " Sign Up ")])], -1 /* HOISTED */);
+var _hoisted_18 = {
+  "class": "cta"
+};
+var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ready to Start Your Quest?", -1 /* HOISTED */);
+});
+var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Sign up now and join the adventure!", -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
   var _component_hgroup = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("hgroup");
   var _component_Layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Layout");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Layout, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [_hoisted_3, _hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+        href: "/About",
+        role: "button"
+      }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_7, _hoisted_8];
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Learn More")];
         }),
         _: 1 /* STABLE */
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_10, _hoisted_11];
         }),
@@ -20939,8 +20950,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [_hoisted_13, _hoisted_14];
         }),
         _: 1 /* STABLE */
-      })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section id=\"leaderboard\">\r\n          <h2>Leaderboard</h2>\r\n          <p>See where you stand among the top fitness gamers!</p>\r\n      </section> "), _hoisted_15])];
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hgroup, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_16, _hoisted_17];
+        }),
+        _: 1 /* STABLE */
+      })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section id=\"leaderboard\">\r\n          <h2>Leaderboard</h2>\r\n          <p>See where you stand among the top fitness gamers!</p>\r\n      </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_18, [_hoisted_19, _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+        href: "/users/create",
+        role: "button"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign Up")];
+        }),
+        _: 1 /* STABLE */
+      })])])];
     }),
+
     _: 1 /* STABLE */
   });
 }
@@ -23747,7 +23772,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  /* margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%; */\r\n  /* display: flex; */\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.features[data-v-6a63e488]{\r\n  /* background-color: #160801; */\n}\nbutton[data-v-6a63e488]{\r\n    /* background-color: #DAA520;\r\n    border-radius: 5%;\r\n    border: none; */\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\r\n    /* height: 50px; */\n}\r\n\r\n/* h1 {\r\n    font-size: 36px;\r\n    margin: 0;\r\n} */\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    /* background-color: #F7EDE5; */\r\n    /* border-radius: 10px; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\r\n\r\n/* #leaderboard{\r\n  margin: 10%;\r\n  padding: 10%;\r\n} */\r\n\r\n/* .cta{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\r\n} */\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  /* margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%; */\r\n  /* display: flex; */\r\n  flex-direction: column;\r\n  align-items: center;\n}\r\n\r\n/* .features{\r\n  background-color: #160801;\r\n} */\nbutton[data-v-6a63e488]{\r\n    /* background-color: #DAA520;\r\n    border-radius: 5%;\r\n    border: none; */\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\r\n    /* height: 50px; */\n}\nLink[data-v-6a63e488]{\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\n}\r\n\r\n/* h1 {\r\n    font-size: 36px;\r\n    margin: 0;\r\n} */\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    /* background-color: #F7EDE5; */\r\n    /* border-radius: 10px; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\r\n\r\n/* #leaderboard{\r\n  margin: 10%;\r\n  padding: 10%;\r\n} */\r\n\r\n/* .cta{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\r\n} */\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
