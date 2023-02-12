@@ -20102,8 +20102,7 @@ var __default__ = {
       isModalOpen: false,
       weightModal: false,
       workoutModal: false,
-      caloriesModal: false,
-      calorieData: []
+      caloriesModal: false
     };
   },
   methods: {
@@ -20128,43 +20127,20 @@ var __default__ = {
       this.workoutModal = false;
       this.weightModal = false;
       this.caloriesModal = false;
-    } //   processWeightData(data) {
-    //   const labels = data.map(entry => new Date(entry.weigh_in_date).toLocaleDateString());
-    //   const datasets = [{
-    //   label: 'Weight',
-    //   backgroundColor: '#f87979',
-    //   data: data.map(entry => entry.weight)
-    // }];
-    // // console.log('labels: ', labels);
-    // // console.log('datasets: ', datasets);
-    //   return {
-    //     labels,
-    //     datasets
-    //   };
-    // },
+    }
   },
   mounted: function mounted() {
-    var _this = this;
     //  get calories data from db
-    axios__WEBPACK_IMPORTED_MODULE_7___default().get('/api/calories').then(function (response) {
-      console.log('Calorie Data: ', response.data); //response.data[0].calories
-      _this.calorieData = response.data;
-    })["catch"](function (error) {
-      console.error('Error while fetching calories data: ', error);
-    });
-    //get weight data from db
-    // axios.get('/api/weight')
-    // .then(response => {
-    //   console.log('Weight Data: ', response.data); //response.data[0].calories
-    //   this.weightData = this.processWeightData(response.data);
-    //   console.log('this.weightData: ', this.weightData);
-    // })
-    // .catch(error => {
-    //   console.error('Error while fetching calories data: ', error);
-    // });
+    // axios.get('/api/calories')
+    //   .then(response => {
+    //     console.log('Calorie Data: ', response.data); //response.data[0].calories
+    //     this.calorieData = response.data;
+    //   })
+    //   .catch(error => {
+    //     console.error('Error while fetching calories data: ', error);
+    //   });
   }
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   __name: 'Show',
   setup: function setup(__props, _ref) {
@@ -20471,7 +20447,7 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
     return {
       loaded: false,
       chartData: null,
-      weightData: null
+      calorieData: null
     };
   },
   mounted: function mounted() {
@@ -20482,18 +20458,9 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
           case 0:
             _this.loaded = false;
             try {
-              //  get calories data from db
               axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/calories').then(function (response) {
-                console.log('Calorie Data: ', response.data); //response.data[0].calories
-                _this.calorieData = response.data;
-              })["catch"](function (error) {
-                console.error('Error while fetching calories data: ', error);
-              });
-              //get weight data from db
-              axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/weight').then(function (response) {
-                console.log('Weight Data: ', response.data); //response.data[0].weight
-                _this.weightData = _this.processWeightData(response.data);
-                console.log('this.weightData: ', _this.weightData);
+                _this.calorieData = _this.processCalorieData(response.data);
+                console.log('this.calorieData: ', _this.calorieData);
                 _this.updateChartData();
               })["catch"](function (error) {
                 console.error('Error while fetching calories data: ', error);
@@ -20509,19 +20476,19 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
     }))();
   },
   methods: {
-    processWeightData: function processWeightData(data) {
+    processCalorieData: function processCalorieData(data) {
       var labels = data.map(function (entry) {
-        return new Date(entry.weigh_in_date).toLocaleDateString();
+        return new Date(entry.date_consumed).toLocaleDateString();
       });
       var datasets = [{
-        label: 'Weight',
+        label: 'Calories',
         backgroundColor: '#f87979',
         data: data.map(function (entry) {
-          return entry.weight;
+          return entry.calories;
         })
       }];
-      console.log('labels: ', labels);
-      console.log('datasets: ', datasets);
+      // console.log('labels: ', labels);
+      // console.log('datasets: ', datasets);
       return {
         labels: labels,
         datasets: datasets
@@ -20529,11 +20496,11 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
     },
     updateChartData: function updateChartData() {
       this.chartData = {
-        labels: this.weightData.labels,
+        labels: this.calorieData.labels,
         datasets: [{
-          label: 'Weight',
+          label: 'Calories',
           backgroundColor: '#f87979',
-          data: this.weightData.datasets[0].data
+          data: this.calorieData.datasets[0].data
         }]
       };
       this.loaded = true;
@@ -21400,7 +21367,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return $options.openModal('Add Calories');
         })
-      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <CaloriesLineChart /> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Journal section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"journal\">\r\n            <h4>Journal</h4>\r\n            <form>\r\n            <textarea id=\"journal\" rows=\"3\" class=\"form-control\" placeholder=\"Enter your thoughts for today...\"></textarea>\r\n            <button>Save</button>\r\n            </form>\r\n            <div class=\"col-md-6\">\r\n            <h2>Today's Journal</h2>\r\n            <p id=\"today-journal\"></p>\r\n            </div>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Fasting section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"fasting\">\r\n            <h4>Fasting</h4>\r\n            <form>\r\n            <input type=\"text\" placeholder=\"Enter fasting hours\">\r\n            <button>Save</button>\r\n            </form>\r\n        </article> "), $data.workoutModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
+      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["CalorieLineChart"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Journal section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"journal\">\r\n            <h4>Journal</h4>\r\n            <form>\r\n            <textarea id=\"journal\" rows=\"3\" class=\"form-control\" placeholder=\"Enter your thoughts for today...\"></textarea>\r\n            <button>Save</button>\r\n            </form>\r\n            <div class=\"col-md-6\">\r\n            <h2>Today's Journal</h2>\r\n            <p id=\"today-journal\"></p>\r\n            </div>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Fasting section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"fasting\">\r\n            <h4>Fasting</h4>\r\n            <form>\r\n            <input type=\"text\" placeholder=\"Enter fasting hours\">\r\n            <button>Save</button>\r\n            </form>\r\n        </article> "), $data.workoutModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
         key: 0,
         isModalOpenProp: $data.isModalOpen,
         onClose: $options.closeModal

@@ -110,10 +110,24 @@ Route::get('/api/calories', function () {
         $id = Auth::id(); 
         $calories = Calorie::where('user_id', $id)
         ->whereBetween('date_consumed', [Carbon::now()->subDays(7), Carbon::now()])
-        ->pluck('date_consumed', 'calories')
-        ->toArray();
+        ->get()
+        ->groupBy(function($calorie) {
+            $date = new DateTime($calorie->date_consumed);
+            return $date->format('Y-m-d');
+        });
         // ->select('calories', 'date_consumed' )->latest()->get();
-        return response()->json($calories);
+
+        $grouped_calories = [];
+        foreach($calories as $date => $calorie_entries) {
+            $total_calories = $calorie_entries->sum('calories');
+            $grouped_calories[$date] = $total_calories;
+        }
+        return response()->json($grouped_calories);
+
+        // return response()->json($calories);
+
+
+        
         } catch (Exception $e) {
         echo $e->getMessage(),PHP_EOL;
         //return error msg
