@@ -10,20 +10,20 @@
                     <div class="user-details">
                     <!-- User name, class and stats -->
                     <h3>{{User.name}}</h3>
-                    <p>Current Class: Mage</p>
+                    <!-- <p>Current Class: Mage</p> -->
                     <!-- <p>Current Class: {{currentClass}}</p> -->
-                    <p>Stats:</p>
-                    <RadarChart/>
+                    <!-- <p>Stats:</p>
+                    <RadarChart/> -->
 
                     <!-- <p>Stats: {{stats}}</p> -->
                     </div>
                 </article>
 
-                <article class="avatar">
+                <!-- <article class="avatar">
                     <h2>Avatar</h2>
-                    <!-- <img :src="avatarImage"/> -->
+                    <img :src="avatarImage"/>
 
-                </article>
+                </article> -->
 
                 <!-- <article class="quests"> -->
                     <!-- Quest section -->
@@ -37,25 +37,25 @@
                 <!-- </article> -->
             </div>
 
-        <article class="workouts">
             <!-- Workouts section -->
+        <!-- <article class="workouts">
             <h4>Workouts</h4>
-            <!-- <div v-for="workout in workouts">
+            <div v-for="workout in workouts">
             {{workout}}
-            </div> -->
+            </div>
             <button v-on:click="openModal('Add Workout')">Add Workout</button>
-            <!-- <button>Start Workout</button> -->
-        </article>
+        </article> -->
         <div class="grid">
             <article class="weight-track">
                 <!-- Weight tracking section -->
                 <h4>Weight Tracking</h4>
                 <form>
-                <!-- <input type="text" placeholder="Enter weight"> -->
+     
+                  <!-- <input type="text" placeholder="Enter weight"> -->
                 <button type="button" v-on:click="openModal('Add Weight')">Add</button>
                 </form>
-                <LineChart ref="lineChart"/>
-
+                <WeightLineChart />
+                <!-- :data="weightData" -->
             </article>
             
             <article class="calories-track">
@@ -66,7 +66,7 @@
                 <input type="text" placeholder="Enter calories"> -->
                 <button type="button" v-on:click="openModal('Add Calories')">Add</button>
                 </form>
-                <LineChart/>
+                <CalorieLineChart />
             </article>
         </div>
         
@@ -134,9 +134,10 @@
 <script>
     import Layout from '../../Shared/Layout';
     import BarChart from '../../components/BarChart';
-    import LineChart from '../../components/LineChart';
+    import WeightLineChart from '../../components/WeightLineChart';
     import RadarChart from '../../components/RadarChart';
     import Modal from '../../Shared/Modal';
+    import CalorieLineChart from '../../components/CalorieLineChart';
     import axios from 'axios';
 
     export default {
@@ -144,9 +145,10 @@
         components: {
         Layout,
         BarChart,
-        LineChart,
+        WeightLineChart,
         RadarChart,
         Modal,
+        CalorieLineChart,
     },
     data() {
     return {
@@ -154,7 +156,6 @@
       weightModal: false,
       workoutModal: false,
       caloriesModal: false,
-      calorieDate: '',
     };
   },
   methods: {
@@ -182,24 +183,19 @@
       this.caloriesModal = false;
 
     },
-  },
+},
   mounted() {
-     //get calories data from db
-    axios.get('/api/calories')
-      .then(response => {
-        console.log('Calorie Data: ', response.data); //response.data[0].calories
-      })
-      .catch(error => {
-        console.error('Error while fetching calories data: ', error);
-      });
-      //get weight data from db
-      axios.get('/api/weight')
-      .then(response => {
-        console.log('Weight Data: ', response.data); //response.data[0].calories
-      })
-      .catch(error => {
-        console.error('Error while fetching calories data: ', error);
-      });
+    //  get calories data from db
+    // axios.get('/api/calories')
+    //   .then(response => {
+    //     console.log('Calorie Data: ', response.data); //response.data[0].calories
+    //     this.calorieData = response.data;
+    //   })
+    //   .catch(error => {
+    //     console.error('Error while fetching calories data: ', error);
+    //   });
+
+
   },
 };
 </script>
@@ -226,12 +222,12 @@ let submit = () => {
 
   if(workoutForm.name != ''){
     console.log('workoutForm.name: ', workoutForm.name);
-    // workoutForm.post('/workouts', {
-    //     onSuccess: () => {
-    //         console.log('success: workout')
-    //         workoutForm.reset()
-    //     }
-    // });
+    workoutForm.post('/workout', {
+        onSuccess: () => {
+            console.log('success: workout')
+            workoutForm.reset()
+        }
+    });
   }
   if(weightForm.weight != ''){
     console.log('weightForm.weight: ', weightForm.weight);
@@ -253,3 +249,10 @@ let submit = () => {
   }
 };
 </script>
+
+<style>
+  canvas{
+    background-color: #bbbbbb ;
+    border-radius: 5px;
+  }
+</style>
