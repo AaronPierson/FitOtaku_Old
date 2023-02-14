@@ -66,7 +66,9 @@ class UsersController extends Controller
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect()->intended('users/show');
+            return Inertia::render('Users/show');
+
+            // return redirect()->intended('users/show');
         }
         dd('error: ' . $validated);
             //redirect

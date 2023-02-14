@@ -1,6 +1,8 @@
 <template>
     <Line 
         v-if="loaded" :data="chartData"
+        ref="lineChart"
+
       />
 </template>
   
@@ -36,9 +38,7 @@
     calorieData: null,
     }),
     async mounted () {
-  this.loaded = false
-
-  try {
+    this.loaded = false
     axios.get('/api/calories')
       .then(response => {
         this.calorieData = this.processCalorieData(response.data);
@@ -48,20 +48,25 @@
       .catch(error => {
         console.error('Error while fetching calories data: ', error);
       });
-  } catch (e) {
-    console.error(e)
-  }
 },
 methods: {
   processCalorieData(data) {
-    const labels = data.map(entry => new Date(entry.date_consumed).toLocaleDateString());
-    const datasets = [{
-      label: 'Calories',
-      backgroundColor: '#f87979',
-      data: data.map(entry => entry.calories)
-    }];
-    // console.log('labels: ', labels);
-    // console.log('datasets: ', datasets);
+    console.log('data: ', data);
+    let labels = [];
+    let datasets = [{    
+    label: 'Calories',    
+    backgroundColor: '#f87979',    
+    data: []
+  }];
+  
+  for (const date in data) {
+    console.log(date + ": " + data[date]);
+    labels.push(date);
+    datasets[0].data.push(data[date]);
+  }
+    console.log('labels: ', labels);
+    console.log('datasets: ', datasets);
+    labels.reverse();
     return {
       labels,
       datasets
@@ -79,5 +84,13 @@ methods: {
     this.loaded = true
   }
 },
+watch: {
+    calorieData: {
+      handler: function() {
+        this.updateChartData()
+      },
+      deep: true
+    }
   }
-  </script>
+}
+</script>

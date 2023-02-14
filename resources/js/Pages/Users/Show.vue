@@ -244,6 +244,9 @@ let submit = () => {
         onSuccess: () => {
             console.log('success: calories')
             caloriesForm.reset()
+
+              // Call updateChartData method after adding new data
+              this.$refs.lineChart.updateChartData();
         }
     });
   }
