@@ -21,6 +21,27 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('class')->default('villager');
+            //Height in feet
+            $table->integer('height')->nullable();
+            //Gender
+            $table->enum('gender', ['Male', 'Female'])->nullable();
+            //Age
+            $table->integer('age')->nullable();
+            //Profile picture
+            $table->binary('profile_pic')->nullable();
+            //Bio
+            $table->string('bio')->nullable();
+            //health stat
+            $table->integer('health')->default(100);
+            //magic stat
+            $table->string('magic')->default(100);
+            //stamina stat
+            $table->string('stamina')->default(100);
+            //Total calories amount they can consume
+            $table->integer('total_calories')->default(2000);
+            //birthday
+            $table->date('birthday')->nullable();
         });
     }
 
