@@ -77,7 +77,7 @@ methods: {
       labels: this.calorieData.labels,
       datasets: [{
         label: 'Calories',
-        backgroundColor: '#f87979',
+        backgroundColor: '#eacf5a',
         data: this.calorieData.datasets[0].data
       }]
     };
