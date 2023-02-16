@@ -59,11 +59,13 @@ methods: {
     const labels = data.map(entry => new Date(entry.weigh_in_date).toLocaleDateString());
     const datasets = [{
       label: 'Weight',
-      backgroundColor: '#f87979',
+      backgroundColor: '#eacf5a',
       data: data.map(entry => entry.weight)
     }];
     // console.log('labels: ', labels);
     // console.log('datasets: ', datasets);
+    labels.reverse();
+    datasets[0].data.reverse();
     return {
       labels,
       datasets
@@ -74,7 +76,7 @@ methods: {
       labels: this.weightData.labels,
       datasets: [{
         label: 'Weight',
-        backgroundColor: '#f87979',
+        backgroundColor: '#eacf5a',
         data: this.weightData.datasets[0].data
       }]
     };

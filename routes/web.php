@@ -6,13 +6,11 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use App\Models\User;
-
 use App\Models\Weight;
 use App\Models\Calorie;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WeightController;
 use App\Http\Controllers\CalorieController;
-use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\WorkoutController;
 use Carbon\Carbon;
 
@@ -88,9 +86,12 @@ Route::middleware('auth')->group(function(){
     Route::get('users', [UsersController::class, 'index']);
     // Shows a single user profile
     Route::get('users/show', [UsersController::class, 'show']);
-    // show a player profile
-    Route::get('players/p1', [PlayerController::class, 'show']);
+    // show user settings
+    Route::get('/users/settings', [UsersController::class, 'edit']);
+
 });
+
+
 
 // login page
 Route::get('login', [LoginController::class, 'create'])->name('login');
@@ -98,8 +99,8 @@ Route::get('login', [LoginController::class, 'create'])->name('login');
 Route::post('login', [LoginController::class, 'store']);
 // logout a user
 Route::post('logout', [LoginController::class, 'destroy'])->middleware('auth');
-
-
+//axios Requests
+//axios get request to check if user is logged in
 Route::get('/api/auth/status', function () {
     // dd(Auth::check());
     return response()->json(['authenticated' => Auth::check()]);
@@ -136,7 +137,6 @@ Route::get('/api/calories', function () {
     }
 
 });
-
 // get user weight
 Route::get('/api/weight', function () {
     try{
@@ -148,9 +148,7 @@ Route::get('/api/weight', function () {
         echo $e->getMessage(),PHP_EOL;
         //return error msg
         return response()->json(['error' => 'There was an error retrieving your data']);
-
     }
-
 });
 
 // send Weight data to database

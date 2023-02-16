@@ -138,11 +138,6 @@ Link{
     justify-content: center;
 }
 
-/* #leaderboard{
-  margin: 10%;
-  padding: 10%;
-} */
-
 /* .cta{
   background-color: #F7EDE5;
     border-radius: 10px;
