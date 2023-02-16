@@ -9,8 +9,9 @@
                     </div>
                     <div class="user-details">
                     <!-- User name, class and stats -->
+                    <Link href="/users/settings" class="outline">Edit</Link>
                     <h3>{{User.name}}</h3>
-                    <!-- <p>Current Class: Mage</p> -->
+                    <p>Current Class: Mage</p>
                     <!-- <p>Current Class: {{currentClass}}</p> -->
                     <!-- <p>Stats:</p>
                     <RadarChart/> -->
@@ -48,9 +49,9 @@
         <div class="grid">
             <article class="weight-track">
                 <!-- Weight tracking section -->
+                <Link href="Users/Edit" >Edit</Link>
                 <h4>Weight Tracking</h4>
                 <form>
-     
                   <!-- <input type="text" placeholder="Enter weight"> -->
                 <button type="button" v-on:click="openModal('Add Weight')">Add</button>
                 </form>
@@ -60,7 +61,8 @@
             
             <article class="calories-track">
                 <!-- Calories/Food tracking section -->
-                <h4>Calories/Food Tracking</h4>
+                <Link href="Users/Edit">Edit</Link>
+                <h4>Calories</h4>
                 <form>
                 <!-- <input type="text" placeholder="Enter food">
                 <input type="text" placeholder="Enter calories"> -->
@@ -91,36 +93,42 @@
             <button>Save</button>
             </form>
         </article> -->
+
+
+        <!-- Modal -->
+        <!-- Workout Modal -->
         <Modal v-if="workoutModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
             <template v-slot:header >
                 <h1 >Workout</h1>
             </template>
             <template v-slot:body>
-              <form @submit.prevent="submit">
+              <form @submit.prevent="submit" method="POST">
                   <input type="text" v-model="workoutForm.name" placeholder="Add Workout">
                   <button @click="saveModal">Save</button>
               </form>
             </template>
         </Modal>
+        <!-- Weight Modal -->
         <Modal v-if="weightModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
           <template v-slot:header >
                 <h1 >Weight</h1>
             </template>
 
             <template v-slot:body>
-                <form @submit.prevent="submit">
+                <form @submit.prevent="submit" method="POST">
                   <input type="number" v-model="weightForm.weight" placeholder="Add Weight">
                   <input type="date" v-model="weightForm.date" placeholder="Add Date">
                   <button @click="saveModal">Save</button>
                 </form>
             </template>
         </Modal>
+        <!-- Calories Modal -->
         <Modal v-if="caloriesModal" v-bind:isModalOpenProp="isModalOpen" @close="closeModal">
           <template v-slot:header >
                 <h1>Calories</h1>
             </template>
             <template v-slot:body>
-                <form @submit.prevent="submit">
+                <form @submit.prevent="submit" method="POST">
                   <input type="number" v-model="caloriesForm.calories" placeholder="Add Calories">
                   <input type="date" v-model="caloriesForm.date" placeholder="Add Date">
                   <button @click="saveModal">Save</button>
@@ -138,7 +146,7 @@
     import RadarChart from '../../components/RadarChart';
     import Modal from '../../Shared/Modal';
     import CalorieLineChart from '../../components/CalorieLineChart';
-    import axios from 'axios';
+    import {Link} from '@inertiajs/vue3';
 
     export default {
         props: ['User', 'isModalOpen'],
@@ -149,6 +157,7 @@
         RadarChart,
         Modal,
         CalorieLineChart,
+        Link,
     },
     data() {
     return {
@@ -255,7 +264,7 @@ let submit = () => {
 
 <style>
   canvas{
-    background-color: #bbbbbb ;
+    background-color: rgba(235, 222, 166, 0.682);
     border-radius: 5px;
   }
 </style>

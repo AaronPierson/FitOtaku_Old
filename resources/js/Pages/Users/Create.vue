@@ -23,7 +23,7 @@
             <h1>Create New User</h1>
             <h2>A minimalist layout for Login pages</h2>
           </hgroup>
-          <form data-bitwarden-watching="1" @submit.prevent="submit" >
+          <form @submit.prevent="submit" >
             <div class="grid">
                 <div>
                     <input type="text" name="name" v-model="form.name" placeholder="Name" aria-label="Name" autocomplete="nickname" required="">

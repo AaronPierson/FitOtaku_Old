@@ -22,7 +22,7 @@
             <h1>Sign in</h1>
             <h2>A minimalist layout for Login pages</h2>
           </hgroup>
-          <form data-bitwarden-watching="1" @submit.prevent="submit">
+          <form @submit.prevent="submit">
             <input type="email" name="email" v-model="form.email" placeholder="Email" aria-label="Email" autocomplete="nickname" required="">
             <div v-if="form.errors.email" v-text="form.errors.email" class="error"></div>
             <input type="password" name="password" v-model="form.password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="">
