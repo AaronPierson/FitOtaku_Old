@@ -55,6 +55,7 @@ class UsersController extends Controller
 
     function store(Request $request)
     {
+        //validate the request
         $validated = $request->validate([
             'name' => 'required',
             'email' => ['required', 'email'],
@@ -72,11 +73,13 @@ class UsersController extends Controller
         }
         dd('error: ' . $validated);
             //redirect
-        return redirect('/');
+            return Inertia::render('Users/show');
     }
 
-    public function edit($id)
+    public function edit()
     {
+        $id = Auth::id();
+
         $user = User::find($id);
         return Inertia::render('Users/Edit', [
             'User' => $user
