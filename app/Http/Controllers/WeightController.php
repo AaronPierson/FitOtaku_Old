@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Weight;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 
 class WeightController extends Controller
@@ -34,6 +35,20 @@ class WeightController extends Controller
             'body_fat' => 'required',
             'date' => 'required',
         ]);
+
+        //check if weight already exists for that date
+        $weight = Weight::where('weigh_in_date', $request->date)->first();
+        if($weight){
+
+            //edit date exsiting weight with new weight
+            $weight->weight = $request->weight;
+            $weight->body_fat = $request->body_fat;
+            $weight->save();
+            return redirect('users/show');
+            // return response()->json($weight);
+            // return response()->json(['error' => 'You already have a weight entry for that date']);
+        }
+
         // dd($validated);
         $weight = new Weight();
         $weight->user_id = Auth::id(); // set the user ID to the current user's ID
@@ -43,15 +58,10 @@ class WeightController extends Controller
         $weight->weigh_in_date = $request->date;
         // ... set any other fields you need to set
         $weight->save();
+ 
+        return redirect('users/show');
 
-
-        // $weight = Weight::create([
-        //     'weight' => $validated['weight'],
-        //     'body_fat' => $validated[null],
-        //     'weigh_in_date' => $validated['date'],
-        // ]);
-        // dd($weight);    
-        return response()->json($weight);
+        // return response()->json($weight);
     }
     
     // update weight
