@@ -1,7 +1,37 @@
 body{
     /* background-color: #160801;
     background: linear-gradient(145deg, #160801, #23312E); */
-    font-family: 'EB Garamond', serif;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #eacf5a; */
+    /* background-color: #39160b; */
+
+    /* background-color: #63321d; */
+
+    /* background-color: #8d4f30; */
+
+    /* background-color: #b86c43; */
+    color: #000;
+
 }
 
+:root {
+    --primary: #eacf5a;
+  }
 
+/* [role=button]{
+    --background-color: var(--primary);
+} */
+
+[data-theme=dark]{
+    --primary: #eacf5a !important;
+    --primary-hover: #b86c43 !important;
+    --primary-focus: rgba(234, 207, 90, 0.25) !important;
+    --primary-inverse: #FFF;
+}
+
+[data-theme=light]{
+    --primary: #eacf5a !important;
+    --primary-hover: #b86c43 !important;
+    --primary-focus: rgba(234, 207, 90, 0.25) !important;
+    --primary-inverse: #FFF;
+}
