@@ -1,12 +1,10 @@
 # Fit Otaku
 
-## License
-
 Fit Otaku is a web application that allows users to track their fitness progress, set goals, and share their progress with others.
 
-## Demo
+## Live version
 
-You can try a live demo of the application at https://fit-otaku.herokuapp.com.
+You can try the live version of the application at https://fit-otaku.herokuapp.com.
 
 ## Technologies Used
 - Laravel
@@ -42,4 +40,4 @@ This is the final public build. Further development will be done privately.
 
 ## Contact
 
-For any inquiries, please contact me at [email address].
+For any inquiries, please contact me at aaron.pierson@pm.me.
