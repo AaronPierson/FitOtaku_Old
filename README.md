@@ -1,29 +1,16 @@
 # Fit Otaku
 
-## License
-
 Fit Otaku is a web application that allows users to track their fitness progress, set goals, and share their progress with others.
 
-## Demo
+## Live version
 
-You can try a live demo of the application at https://fit-otaku.herokuapp.com.
+You can try the live version of the application at https://fitotaku.com or https://fitotaku.quest
 
 ## Technologies Used
 - Laravel
 - Vue.js
 - Pico CSS
 - Chart.js
-
-## Getting Started
-To get started, clone this repository to your local machine and run the following commands:
-
-composer install
-npm install
-npm run dev
-php artisan migrate
-php artisan serve
-
-Then, open your web browser and navigate to http://localhost:8000.
 
 ## Features
 - Record body weight
@@ -42,4 +29,4 @@ This is the final public build. Further development will be done privately.
 
 ## Contact
 
-For any inquiries, please contact me at [email address].
+For any inquiries, please contact me at aaron.pierson@pm.me.
