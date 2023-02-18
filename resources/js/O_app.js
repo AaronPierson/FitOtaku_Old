@@ -4,6 +4,7 @@ import chart from './components/BarChart'
 import modal from './components/ModalBox'
 import nav from './components/nav'
 
+
 const app = createApp({
     data() {
         return {

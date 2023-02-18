@@ -23,15 +23,16 @@ body{
 } */
 
 [data-theme=dark]{
-    --primary: #eacf5a !important;
-    --primary-hover: #b86c43 !important;
+    --primary: #fdd13a
+    !important;
+    --primary-hover: #8f8736 !important;
     --primary-focus: rgba(234, 207, 90, 0.25) !important;
     --primary-inverse: #FFF;
 }
 
 [data-theme=light]{
-    --primary: #eacf5a !important;
-    --primary-hover: #b86c43 !important;
+    --primary: #3e5033 !important;
+    --primary-hover: #747435 !important;
     --primary-focus: rgba(234, 207, 90, 0.25) !important;
     --primary-inverse: #FFF;
 }

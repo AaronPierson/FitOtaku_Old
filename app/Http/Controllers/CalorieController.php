@@ -20,17 +20,8 @@ class CalorieController extends Controller
         $calorie = new Calorie();
         $calorie->user_id = Auth::id(); // set the user ID to the current user's ID
         $calorie->calories = $request->calories;
-        // $calorie->meal_type = $request->meal_type;
-        //set date
         $calorie->date_consumed = $request->date;
-        // ... set any other fields you need to set
         $calorie->save();
-
-        // $calorie = Calorie::create([
-        //     'calories' => $validated['calories'],
-        //     'date' => $validated['date'],
-        // ]);
-        //  dd($calorie);    
         return redirect('users/show');
     }
 

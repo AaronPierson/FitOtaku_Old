@@ -35,11 +35,6 @@
         </div>
       </section>
 
-      <!-- <section id="leaderboard">
-          <h2>Leaderboard</h2>
-          <p>See where you stand among the top fitness gamers!</p>
-      </section> -->
-
       <section class="cta">
         <h2>Ready to Start Your Quest?</h2>
         <p>Sign up now and join the adventure!</p>
@@ -73,28 +68,16 @@ section {
 }
 
 .hero{
-  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
-  /* margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 2%; */
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
 
-/* .features{
-  background-color: #160801;
-} */
-
 button{
-    /* background-color: #DAA520;
-    border-radius: 5%;
-    border: none; */
+
     margin-left: auto;
     margin-right: auto; 
     display: block;
     width: 50%;
-    /* height: 50px; */
 }
 Link{
     margin-left: auto;
@@ -103,20 +86,10 @@ Link{
     width: 50%;
 }
 
-/* h1 {
-    font-size: 36px;
-    margin: 0;
-} */
-
 .feature {
     flex: 1;
     margin: 10px;
     padding: 20px;
-    /* background-color: #fff; */
-    /* background-color: #9a9a8e; */
-    /* background-color: #F7EDE5; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
     text-align: center;
     color: #45230d;
 }
@@ -127,25 +100,11 @@ Link{
 }
 
 .fe-group{
-  
-  /* background-color:#23312E ; */
     border-radius: 10px;
     text-align: center;
-    /* color: #45230d; */
-    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
     align-items: center;
     margin: 50px;
     justify-content: center;
 }
-
-/* .cta{
-  background-color: #F7EDE5;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
-    color: #45230d;
-} */
 
 </style>

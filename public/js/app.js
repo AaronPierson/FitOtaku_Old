@@ -21189,7 +21189,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [_hoisted_16, _hoisted_17];
         }),
         _: 1 /* STABLE */
-      })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section id=\"leaderboard\">\r\n          <h2>Leaderboard</h2>\r\n          <p>See where you stand among the top fitness gamers!</p>\r\n      </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_18, [_hoisted_19, _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+      })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_18, [_hoisted_19, _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
         href: "/users/create",
         role: "button"
       }, {
@@ -21525,25 +21525,33 @@ var _hoisted_3 = {
 };
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "avatar"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Avatar section "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"avatar.png\" alt=\"user avatar\"> ")], -1 /* HOISTED */);
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Avatar section "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "avatar.png",
+  alt: "user avatar"
+})], -1 /* HOISTED */);
 var _hoisted_5 = {
   "class": "user-details"
 };
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Current Class: Mage", -1 /* HOISTED */);
 var _hoisted_7 = {
+  "class": "avatar"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Avatar", -1 /* HOISTED */);
+var _hoisted_9 = ["src"];
+var _hoisted_10 = {
   "class": "grid"
 };
-var _hoisted_8 = {
+var _hoisted_11 = {
   "class": "weight-track"
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Weight Tracking", -1 /* HOISTED */);
-var _hoisted_10 = {
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Weight Tracking", -1 /* HOISTED */);
+var _hoisted_13 = {
   "class": "calories-track"
 };
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Calories", -1 /* HOISTED */);
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Workout", -1 /* HOISTED */);
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Weight", -1 /* HOISTED */);
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Calories", -1 /* HOISTED */);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Calories", -1 /* HOISTED */);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Workout", -1 /* HOISTED */);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Weight", -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Calories", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Layout"], null, {
@@ -21556,37 +21564,39 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit")];
         }),
         _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.User.name), 1 /* TEXT */), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Current Class: {{currentClass}}</p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Stats:</p>\r\n                    <RadarChart/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Stats: {{stats}}</p> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"avatar\">\r\n                    <h2>Avatar</h2>\r\n                    <img :src=\"avatarImage\"/>\r\n\r\n                </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"quests\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Quest section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4>Quests</h4> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"quest in quests\">\r\n                    {{quest}}\r\n                    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"contrast\" v-on:click=\"openModal('Job Board')\">\r\n                        Go to Job Board\r\n                    </button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </article> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Workouts section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"workouts\">\r\n            <h4>Workouts</h4>\r\n            <div v-for=\"workout in workouts\">\r\n            {{workout}}\r\n            </div>\r\n            <button v-on:click=\"openModal('Add Workout')\">Add Workout</button>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Weight tracking section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.User.name), 1 /* TEXT */), _hoisted_6])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        src: _ctx.avatarImage
+      }, null, 8 /* PROPS */, _hoisted_9)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Weight tracking section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
         href: "Users/Edit"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit")];
         }),
         _: 1 /* STABLE */
-      }), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter weight\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      }), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter weight\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         type: "button",
         onClick: _cache[0] || (_cache[0] = function ($event) {
           return $options.openModal('Add Weight');
         })
-      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["WeightLineChart"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" :data=\"weightData\" ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Calories/Food tracking section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["WeightLineChart"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" :data=\"weightData\" ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Calories/Food tracking section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
         href: "Users/Edit"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit")];
         }),
         _: 1 /* STABLE */
-      }), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter food\">\r\n                <input type=\"text\" placeholder=\"Enter calories\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      }), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" placeholder=\"Enter food\">\r\n                <input type=\"text\" placeholder=\"Enter calories\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         type: "button",
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return $options.openModal('Add Calories');
         })
-      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["CalorieLineChart"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Journal section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"journal\">\r\n            <h4>Journal</h4>\r\n            <form>\r\n            <textarea id=\"journal\" rows=\"3\" class=\"form-control\" placeholder=\"Enter your thoughts for today...\"></textarea>\r\n            <button>Save</button>\r\n            </form>\r\n            <div class=\"col-md-6\">\r\n            <h2>Today's Journal</h2>\r\n            <p id=\"today-journal\"></p>\r\n            </div>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Fasting section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"fasting\">\r\n            <h4>Fasting</h4>\r\n            <form>\r\n            <input type=\"text\" placeholder=\"Enter fasting hours\">\r\n            <button>Save</button>\r\n            </form>\r\n        </article> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Workout Modal "), $data.workoutModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
+      }, "Add")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["CalorieLineChart"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Workout Modal "), $data.workoutModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Modal"], {
         key: 0,
         isModalOpenProp: $data.isModalOpen,
         onClose: $options.closeModal
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_12];
+          return [_hoisted_15];
         }),
         body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
@@ -21614,7 +21624,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClose: $options.closeModal
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_13];
+          return [_hoisted_16];
         }),
         body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
@@ -21648,7 +21658,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClose: $options.closeModal
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_14];
+          return [_hoisted_17];
         }),
         body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
@@ -24147,7 +24157,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n  /* margin-left: 10%;\r\n  margin-right: 10%;\r\n  border-radius: 2%; */\r\n  /* display: flex; */\r\n  flex-direction: column;\r\n  align-items: center;\n}\r\n\r\n/* .features{\r\n  background-color: #160801;\r\n} */\nbutton[data-v-6a63e488]{\r\n    /* background-color: #DAA520;\r\n    border-radius: 5%;\r\n    border: none; */\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\r\n    /* height: 50px; */\n}\nLink[data-v-6a63e488]{\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\n}\r\n\r\n/* h1 {\r\n    font-size: 36px;\r\n    margin: 0;\r\n} */\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    /* background-color: #fff; */\r\n    /* background-color: #9a9a8e; */\r\n    /* background-color: #F7EDE5; */\r\n    /* border-radius: 10px; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n  \r\n  /* background-color:#23312E ; */\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    /* color: #45230d; */\r\n    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\r\n\r\n/* .cta{\r\n  background-color: #F7EDE5;\r\n    border-radius: 10px;\r\n    box-shadow: 0 0 20px rgba(0,0,0,0.5);\r\n    text-align: center;\r\n    margin-left: 15%;\r\n    margin-right: 15%;\r\n    color: #45230d;\r\n} */\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nsection[data-v-6a63e488] {\r\n    color: #DAA520;\r\n    padding: 20px;\r\n    text-align: center;\r\n    margin: 20px 0;\r\n    height: 25%;\n}\n.hero[data-v-6a63e488]{\r\n  flex-direction: column;\r\n  align-items: center;\n}\nbutton[data-v-6a63e488]{\r\n\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\n}\nLink[data-v-6a63e488]{\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display: block;\r\n    width: 50%;\n}\n.feature[data-v-6a63e488] {\r\n    flex: 1;\r\n    margin: 10px;\r\n    padding: 20px;\r\n    text-align: center;\r\n    color: #45230d;\n}\n.features[data-v-6a63e488]{\r\n  display: flex;\n}\n.fe-group[data-v-6a63e488]{\r\n    border-radius: 10px;\r\n    text-align: center;\r\n    align-items: center;\r\n    margin: 50px;\r\n    justify-content: center;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
