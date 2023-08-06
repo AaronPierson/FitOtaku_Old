@@ -1,0 +1,32 @@
+name: Deploy to Home Lab
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: debin-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Build assets
+        run: npm install && npm run production
+
+      - name: Deploy to Home Lab
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOME_LAB_HOST }}
+          username: ${{ secrets.HOME_LAB_USERNAME }}
+          key: ${{ secrets.HOME_LAB_SSH_KEY }}
+          source: "."  # This is the root of your Laravel project
+          target: "/var/www/laravel"  # The path where your web server serves files
+
+      - name: Restart web server
+        run: ssh -i ${{ secrets.HOME_LAB_SSH_KEY }} ${{ secrets.HOME_LAB_USERNAME }}@${{ secrets.HOME_LAB_HOST }} "sudo systemctl restart apache2"
