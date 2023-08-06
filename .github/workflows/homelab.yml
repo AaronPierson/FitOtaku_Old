@@ -1,10 +1,8 @@
 name: Deploy to Home Lab
-
 on:
   push:
     branches:
       - master
-
 jobs:
   deploy:
     runs-on: debin-latest
