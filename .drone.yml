@@ -1,10 +1,56 @@
 kind: pipeline
 type: docker
-name: default
+name: tests
+
+trigger:
+  event:
+    - push
+    - pull_request
+  branch:
+    - master
+    - '*.x'
+  cron:
+    - "0 0 * * *"
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
-- name: greeting
+- name: Checkout code
+  image: alpine/git
+  commands:
+    - git clone https://github.com/${DRONE_REPO}.git .
+    - git checkout ${DRONE_COMMIT}
+
+- name: Setup PHP
+  image: shivammathur/setup-php:v2
+  settings:
+    php-version: ${PHP_VERSION}
+    extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+    coverage: none
+
+- name: Install Composer dependencies
+  image: composer/composer
+  commands:
+    - composer install --prefer-dist --no-interaction --no-progress
+
+- name: Copy environment file
   image: alpine
   commands:
-  - echo hello
-  - echo world
+    - cp .env.example .env
+
+- name: Generate app key
+  image: php:${PHP_VERSION}
+  commands:
+    - php artisan key:generate
+
+- name: Execute tests
+  image: php:${PHP_VERSION}
+  commands:
+    - vendor/bin/phpunit
+
+matrix:
+  PHP_VERSION:
+    - "8.1"
+    - "8.2"
