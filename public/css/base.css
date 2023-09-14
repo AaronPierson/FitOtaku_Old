@@ -23,16 +23,19 @@ body{
 } */
 
 [data-theme=dark]{
-    --primary: #fdd13a
-    !important;
+    --primary: #fdd13a !important;
     --primary-hover: #8f8736 !important;
     --primary-focus: rgba(234, 207, 90, 0.25) !important;
-    --primary-inverse: #FFF;
+    --primary-inverse: #596234 !important;
+    --contrast: #FFE48A !important;
+    /* --background-color: #3e5033 !important; */
 }
 
 [data-theme=light]{
     --primary: #3e5033 !important;
-    --primary-hover: #747435 !important;
-    --primary-focus: rgba(234, 207, 90, 0.25) !important;
-    --primary-inverse: #FFF;
+    --primary-hover: #596234 !important;
+    --primary-focus: rgba(62, 98, 52, 0.25) !important;
+    --primary-inverse: #FFF ;
+    --contrast: #B39122 !important;
+
 }

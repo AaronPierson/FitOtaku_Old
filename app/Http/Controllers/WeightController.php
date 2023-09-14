@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Weight;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Carbon\Carbon;
 
 
 class WeightController extends Controller
@@ -15,16 +16,32 @@ class WeightController extends Controller
     public function index()
     {
         //get user id
-        $user_id = Auth::id();
-        $weights = Weight::all($user_id);
-        return response()->json($weights);
+        $id = Auth::id();
+        $weights = Weight::where('user_id', $id)->get();
+
+        foreach ($weights as $weight) {
+            $weight->weigh_in_date = Carbon::parse($weight->weigh_in_date)->format('Y-m-d');
+        }
+
+        return Inertia::render('Users/Weight/Index', [
+            'Weights' => $weights,
+            'authenticated' => true
+        ]);
     }
     
     // get single user weight
-    public function show($id)
+    public function show()
     {
-        $weight = Weight::find($id);
-        return response()->json($weight);
+        // //get user id
+        // $id = Auth::id();
+        // $weights = Weight::where('user_id', $id)->get();
+        // // dd($weights);        
+        // return Inertia::render('Users/Weight/Edit', [
+        //     'Weights' => $weights,
+        //     'authenticated' => true
+        // ]);
+
+        // // return response()->json($weight);
     }
     
     // create new weight
@@ -44,7 +61,9 @@ class WeightController extends Controller
             $weight->weight = $request->weight;
             $weight->body_fat = $request->body_fat;
             $weight->save();
-            return redirect('users/show');
+            return redirect()->secure('p1/show');
+            // return Inertia::render('Users/Show');
+            // return redirect('users/show');
             // return response()->json($weight);
             // return response()->json(['error' => 'You already have a weight entry for that date']);
         }
@@ -59,17 +78,20 @@ class WeightController extends Controller
         // ... set any other fields you need to set
         $weight->save();
  
-        return redirect('users/show');
+        return redirect()->secure('p1/show');
 
         // return response()->json($weight);
     }
     
     // update weight
-    public function update($id, Request $request)
+    public function update(Request $request)
     {
-        $weight = Weight::find($id);
-        $weight->update($request->all());
-        return response()->json($weight);
+        $weight = Weight::find($request->id);
+        $weight->weight = $request->weight;
+        $weight->body_fat = $request->body_fat;
+        $weight->weigh_in_date = $request->weigh_in_date;
+        $weight->update($request->all());  
+        return redirect()->secure('p1/weight/index');
     }
     
     // delete weight
@@ -77,7 +99,8 @@ class WeightController extends Controller
     {
         $weight = Weight::find($id);
         $weight->delete();
-        return response()->json('Weight deleted!');
+        return redirect()->back()->with('status', 'Weight deleted!');
+        //return response()->json('Weight deleted!');
     }
 
 

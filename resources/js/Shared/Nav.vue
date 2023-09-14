@@ -1,32 +1,42 @@
 <template>
-<header class="container">
-  <div class="logo">Logo</div>
-  <nav>
+<header>
+  <div class="logo-ham">
+      <div class="logo">
+      <img src='/images/logo3.png' alt="Logo"/>
+    </div>
+    <div class="hamburger" @click="toggleMenu">
+        <span class="hamburger-icon"></span>
+    </div>
+  </div>
+
+  <nav :class="{'menu-open': isMenuOpen}">
     <ul>
       <li><Link href="/">Home</Link></li>
       <!-- <li><Link href="#">Exercises</Link></li> -->
       <!-- <li><Link href="#leaderboard">Leaderboard</Link></li> -->
       <li><Link href="/About">About</Link></li>
       <li><Link href="/Contact">Contact</Link></li>
-    </ul>
-    <ul>
-        <template v-if="isAuthenticated">
+      <template v-if="isAuthenticated">
           <li>
-              <Link href="/users/show" role="button">Dashboard</Link>
+              <Link href="/p1/show" class="Primary">Dashboard</Link>
           </li>
             <li>
-                <Link href="/logout" role="button" class="secondary">Log Out</Link>
+                <Link href="/logout" method="post" class="secondary">Log Out</Link>
             </li>
         </template>
         <template v-else>
             <li>
-              <Link href="/login" role="button">Log In</Link>
+              <Link href="/login" class="Primary">Log In</Link>
             </li>
             <li>
-              <Link href="/users/create" class="secondary" role="button">Sign Up</Link>
+              <Link href="/signup" class="contrast" >Sign Up</Link>
             </li>
         </template>
     </ul>
+    <!-- <button class="hamburger" @click="toggleMenu">
+      <span class="sr-only">Toggle menu</span>
+      <span class="hamburger-icon"></span>
+    </button> -->
   </nav>
 </header>
 
@@ -40,7 +50,8 @@
         },
         data() {
     return {
-      authenticated: false
+      authenticated: false,
+      isMenuOpen: false
     };
   },
   mounted() {
@@ -55,70 +66,195 @@
     isAuthenticated() {
       return this.authenticated;
     }
-  }
+  },
+  methods: {
+            toggleMenu() {
+                this.isMenuOpen = !this.isMenuOpen;
+            }
+        }
 };
 </script>
-<style scope>
 
-header {
-    /* background-color: #00495C; */
-    color: #fff;
+<style scope>
+/*Desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  header {
     padding: 20px;
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    margin-right: 5%;
 }
 
-nav {
+  nav {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+  }
+
+  nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+  }
+
+  nav.menu-open {
+      transform: translateY(0%);
+  }
+
+  .log-in-out-container {
     display: flex;
-    /* justify-content: flex-start; */
+    justify-content: flex-end;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+  img{
+      width: 55%;
+      height: 55%;
+      max-width: 100px;
+  }
+    /* .log-in-out {
+      margin-left: auto;
+    } */
+  }
+  /* Moblie */
+  @media (max-width: 768px) {
+    .logo-ham{
+      justify-content: space-between;
+      display: flex;
+      margin: 30px;
+      align-items: center;
+      text-align: center;
+      /* justify-content: space-between; */
+    }
+    header {
+      /* display: flex; */
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 20px;
+      /* background: linear-gradient(145deg, #fdd13a, #3e5033); */
+
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav ul {
+      list-style: none;
+      display: none; /* hide the links by default */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.menu-open ul {
+      display: flex; /* show the links when the menu is open */
+      flex-direction: column; /* stack the links vertically */
+      align-items: center; /* center the links horizontally */
+    }
+
+    nav li {
+      margin: 10px 0; /* add some vertical spacing between the links */
+      /* border-bottom: black 1px solid;
+      width: 100%; */
+      text-align: center;    
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .hamburger {
+      display: block;
+      margin: 0 20px;
+      border: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hamburger-icon {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #000;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger-icon::before {
+      top: -6px;
+    }
+
+    .hamburger-icon::after {
+      bottom: -6px;
+    }
+
+    .menu-open .hamburger-icon {
+      background-color: transparent;
+    }
+
+    .menu-open .hamburger-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .menu-open .hamburger-icon::after {
+      transform: rotate(-45deg);
+      bottom: 0;
+    }
+
+    .logo {
+      display: flex;
+      margin: 0px;
+    }
+
+    img{
+      width: 28%;
+      height: 28%;
+      max-width: 280px;
+  }
+
+  ul > li {
+    display: flex;
     justify-content: center;
-    margin: 20px 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
     margin: 0;
-    padding: 0;
-}
+    padding: 0.5em 0;
+    width: 100%;
+    /* background-color: #222; */
+  }
 
-nav li {
-    /* margin: 0 10px; */
-    /* margin-right: 1rem; */
+  /* ul > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+    border-radius: 15%;
+  } */
 
-}
+  ul > li {
+    border-bottom: 1px solid #444;
+    border-radius: 10%;
+  }
 
-nav a {
-    /* color: #DAA520; */
-    /* text-decoration: none;
-    font-size: 18px; */
-}
-
-
-
-/* button{
-    background-color: #DAA520;
-    border-radius: 5%;
-    border: none;
-    width: 100px;
-    height: 50px;
-    cursor:pointer
-} */
-
-.log-in-out-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.logo {
-  margin-right: auto;
-}
-
-.log-in-out {
-  /* margin-left: auto; */
 }
 
 </style>

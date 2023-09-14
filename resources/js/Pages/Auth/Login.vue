@@ -1,20 +1,5 @@
 <template>
-    <header class="container">
-    <nav>
-        <ul>
-            <li><div class="logo">Logo</div></li>
-        </ul>
-        <ul>
-            <li><Link href="/">Home</Link></li>
-            <li>  
-                <div class="log-in-out" >
-                  <li><Link href="/users/create" method="get" role="button">Sign Up</Link></li>
-                <!-- <button @click="logout" v-else>Log Out</button> -->
-            </div>
-            </li>
-        </ul>
-    </nav>
-    </header>
+<layout>
     <main class="container">
       <article class="grid">
         <div>
@@ -25,6 +10,7 @@
           <form @submit.prevent="submit">
             <input type="email" name="email" v-model="form.email" placeholder="Email" aria-label="Email" autocomplete="nickname" required="">
             <div v-if="form.errors.email" v-text="form.errors.email" class="error"></div>
+            <Link href="/reset-password" class="forgot">Forgot your password?</Link>
             <input type="password" name="password" v-model="form.password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="">
             <div v-if="form.errors.password" v-text="form.errors.password" class="error"></div>
             <fieldset>
@@ -36,18 +22,16 @@
             <button type="submit" class="contrast" :disabled="form.processing">Login</button>
           </form>
         </div>
-        <div></div>
+        <div><img src="/images/logo-loop.svg" alt="Logo" class="loop"></div>
       </article>
     </main>
-
-        <footer class="container">
-                <p>&copy; Fitness Quest 2023</p>
-        </footer>
+</layout>
 </template>
 
 <script>
 import Layout from '../../Shared/Layout';
 import { Link } from '@inertiajs/vue3';
+
 export default {
   components: {
     Layout,
@@ -72,13 +56,25 @@ let submit = () => {
 
 <style scoped>
     main {
-        margin: 0% auto;
+        margin: 5% auto;
         margin-bottom: 10%;
         text-align: center;
     }
-
-    footer{
+    li img{
+    width: 55%;
+    height: 55%;
+    max-width: 100px;
+    }
+    .loop{
         width: 100%;
-        text-align: center;
+        height: 100%;
+        max-width: 500px;
+    }
+
+    .forgot{
+        display: block;
+        text-align: right;
+        margin-bottom: 1rem;
+        font-size: small;
     }
 </style>

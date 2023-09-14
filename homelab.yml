@@ -1,0 +1,47 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          echo "Installing Composer dependencies..."
+          composer install
+
+      - name: Build assets
+        run: |
+          echo "Installing npm dependencies..."
+          npm install
+          echo "Building assets..."
+          npm run production
+
+      - name: Connect to Twingate Service
+        uses: twingate/github-action@v1
+        with:
+          service-key: ${{ secrets.TWINGATE_SERVICE_KEY }}
+      
+      - name: Deploy to Home Lab
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOME_LAB_HOST }}
+          username: ${{ secrets.HOME_LAB_USERNAME }}
+          key: ${{ secrets.HOME_LAB_SSH_KEY }}
+          # password: ${{ secrets.HOME_LAB_PASSWORD }}
+          port: 22
+          source: "."  # This is the root of your Laravel project
+          target: "/var/www/laravel"  # The path where your web server serves files
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_auth_sock  # Fixes SSH agent forwarding issue
+
+      # - name: Restart web server
+      #   run: |
+      #     echo "Restarting web server..."
+      #     ssh -i ${{ secrets.HOME_LAB_SSH_KEY }} ${{ secrets.HOME_LAB_USERNAME }}@${{ secrets.HOME_LAB_HOST }} "sudo systemctl restart apache2"
+      #     echo "Web server restarted successfully."

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('class')->default('villager');
             //Height in feet
-            $table->integer('height')->nullable();
+            $table->decimal('height', 3, 1)->nullable();
             //Gender
             $table->enum('gender', ['Male', 'Female'])->nullable();
             //Age
@@ -31,7 +31,7 @@ return new class extends Migration
             //Profile picture
             $table->binary('profile_pic')->nullable();
             //Bio
-            $table->string('bio')->nullable();
+            $table->text('bio')->nullable();
             //health stat
             $table->integer('health')->default(100);
             //magic stat

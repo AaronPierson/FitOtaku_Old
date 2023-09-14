@@ -9,9 +9,14 @@ class Exercise extends Model
 {
     use HasFactory;
 
+    // public function workouts()
+    // {
+    //     return $this->belongsToMany(Workout::class);
+
+    // }
     public function workouts()
     {
-        return $this->belongsToMany(Workout::class);
-
+        return $this->belongsToMany('App\Models\Workout')->withPivot('reps', 'sets');
     }
+
 }

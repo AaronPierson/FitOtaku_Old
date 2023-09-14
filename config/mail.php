@@ -92,9 +92,10 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'support@fitotaku.com'),
+        'name' => env('MAIL_FROM_NAME', 'Fit Okatu Support'),
     ],
+    'reply_to' => ['address' => 'support@fitotaku.com', 'name' => 'Fit Okatu Support'],
 
     /*
     |--------------------------------------------------------------------------

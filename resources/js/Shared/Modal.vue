@@ -14,7 +14,7 @@
         </section>
 
         <footer>
-          <button @click="closeModal">Close</button>
+          <button @click="closeModal" class="contrast">Close</button>
         </footer>
       </article>
     </dialog>

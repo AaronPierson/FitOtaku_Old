@@ -19,13 +19,11 @@ return new class extends Migration
             //User ID of the user who created the entry (foreign key)
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //Date of the entry
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            //Updated at
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamps();
             //Calories consumed
             $table->integer('calories');
             //Meal type
-            $table->enum('meal_type', ['breakfast', 'lunch', 'dinner', 'snack'])->nullable();
+            $table->enum('meal_type', ['Breakfast', 'Lunch', 'Dinner', 'Snack'])->nullable();
             //Food name
             $table->string('food_name')->nullable();
             //Servings

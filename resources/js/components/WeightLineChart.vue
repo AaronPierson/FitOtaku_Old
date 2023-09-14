@@ -2,6 +2,9 @@
     <Line 
         v-if="loaded" :data="chartData"
       />
+      <div v-else class="loading">
+        Loading...
+    </div>
 </template>
   
   <script>
@@ -37,24 +40,27 @@
     }),
     async mounted () {
   this.loaded = false
-
-  try {
-    //get weight data from db
-    axios.get('/api/weight')
-      .then(response => {
-        // console.log('Weight Data: ', response.data); //response.data[0].weight
-        this.weightData = this.processWeightData(response.data);
-        // console.log('this.weightData: ', this.weightData);
-        this.updateChartData();
-      })
-      .catch(error => {
-        console.error('Error while fetching calories data: ', error);
-      });
-  } catch (e) {
-    console.error(e)
-  }
-},
-methods: {
+  await this.fetchData(); // Fetch data on initial mount  
+  },
+  methods: {
+    async fetchData() {
+      try {
+      //get weight data from db
+      axios.get('/api/weight')
+        .then(response => {
+          // console.log('Weight Data: ', response.data); //response.data[0].weight
+          console.log('testing weight');
+          this.weightData = this.processWeightData(response.data);
+          // console.log('this.weightData: ', this.weightData);
+          this.updateChartData();
+        })
+        .catch(error => {
+          console.error('Error while fetching calories data: ', error);
+        });
+    } catch (e) {
+      console.error(e)
+    }
+  },
   processWeightData(data) {
     const labels = data.map(entry => new Date(entry.weigh_in_date).toLocaleDateString());
     const datasets = [{
@@ -62,8 +68,6 @@ methods: {
       backgroundColor: '#eacf5a',
       data: data.map(entry => entry.weight)
     }];
-    // console.log('labels: ', labels);
-    // console.log('datasets: ', datasets);
     labels.reverse();
     datasets[0].data.reverse();
     return {
@@ -81,7 +85,17 @@ methods: {
       }]
     };
     this.loaded = true
-  }
-},
-  }
-  </script>
+    console.log('this.loaded: ', this.loaded);
+    },
+  },
+}
+</script>
+
+<style scoped>
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eacf5a;
+}
+</style>
